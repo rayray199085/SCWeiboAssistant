@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D43253F22645EC300FBAC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43253E22645EC300FBAC1B /* AppDelegate.swift */; };
-		0D43254122645EC300FBAC1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43254022645EC300FBAC1B /* ViewController.swift */; };
-		0D43254422645EC300FBAC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D43254222645EC300FBAC1B /* Main.storyboard */; };
 		0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D43254522645EC400FBAC1B /* Assets.xcassets */; };
-		0D43254922645EC400FBAC1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D43254722645EC400FBAC1B /* LaunchScreen.storyboard */; };
 		0D43255422645EC400FBAC1B /* SCWeiboAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43255322645EC400FBAC1B /* SCWeiboAssistantTests.swift */; };
 		0D43255F22645EC400FBAC1B /* SCWeiboAssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43255E22645EC400FBAC1B /* SCWeiboAssistantUITests.swift */; };
 /* End PBXBuildFile section */
@@ -36,10 +33,7 @@
 /* Begin PBXFileReference section */
 		0D43253B22645EC300FBAC1B /* SCWeiboAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCWeiboAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D43253E22645EC300FBAC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D43254022645EC300FBAC1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0D43254322645EC300FBAC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D43254522645EC400FBAC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0D43254822645EC400FBAC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D43254A22645EC400FBAC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D43254F22645EC400FBAC1B /* SCWeiboAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCWeiboAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D43255322645EC400FBAC1B /* SCWeiboAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCWeiboAssistantTests.swift; sourceTree = "<group>"; };
@@ -98,10 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				0D43253E22645EC300FBAC1B /* AppDelegate.swift */,
-				0D43254022645EC300FBAC1B /* ViewController.swift */,
-				0D43254222645EC300FBAC1B /* Main.storyboard */,
 				0D43254522645EC400FBAC1B /* Assets.xcassets */,
-				0D43254722645EC400FBAC1B /* LaunchScreen.storyboard */,
 				0D43254A22645EC400FBAC1B /* Info.plist */,
 			);
 			path = SCWeiboAssistant;
@@ -187,6 +178,7 @@
 		0D43253322645EC300FBAC1B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SC;
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Stephen Cao";
@@ -229,9 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D43254922645EC400FBAC1B /* LaunchScreen.storyboard in Resources */,
 				0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */,
-				0D43254422645EC300FBAC1B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D43254122645EC300FBAC1B /* ViewController.swift in Sources */,
 				0D43253F22645EC300FBAC1B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,25 +280,6 @@
 			targetProxy = 0D43255B22645EC400FBAC1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0D43254222645EC300FBAC1B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D43254322645EC300FBAC1B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0D43254722645EC400FBAC1B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D43254822645EC400FBAC1B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0D43256122645EC400FBAC1B /* Debug */ = {
@@ -432,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCWeiboAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -449,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCWeiboAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
