@@ -15,6 +15,7 @@ class SCDemoViewController: SCBaseViewController {
     }
     @objc private func clickNextButton(){
         navigationController?.pushViewController(SCDemoViewController(), animated: true)
+        
     }
 }
 extension SCDemoViewController{

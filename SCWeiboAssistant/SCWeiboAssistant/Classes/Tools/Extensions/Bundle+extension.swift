@@ -16,4 +16,12 @@ extension Bundle{
     var currentVersion : String{
         return infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }
+    func getFilePath(bundleName: String, fileName: String)->String?{
+        guard let bundlePath = path(forResource: bundleName, ofType: nil),
+              let bundle = Bundle(path: bundlePath),
+              let filePath = bundle.path(forResource: fileName, ofType: nil) else{
+            return nil
+        }
+        return filePath
+    }
 }

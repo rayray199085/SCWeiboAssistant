@@ -38,4 +38,9 @@
     [button sizeToFit];
     return button;
 }
+-(void)imageButtonWithNormalImageName:(NSString *)normalImage andWithHighlightedImageName:(NSString *)highlightedImage{
+    [self setImage:[UIImage imageNamed:normalImage] forState:UIControlStateNormal];
+    [self setImage:[UIImage imageNamed:highlightedImage] forState:UIControlStateHighlighted];
+    [self sizeToFit];
+}
 @end

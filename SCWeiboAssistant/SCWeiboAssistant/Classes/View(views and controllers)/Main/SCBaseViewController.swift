@@ -20,5 +20,6 @@ class SCBaseViewController: UIViewController {
 extension SCBaseViewController{
     @objc func setupUI(){
         view.backgroundColor = UIColor.orange
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray]
     }
 }

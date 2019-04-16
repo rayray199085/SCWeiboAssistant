@@ -17,6 +17,10 @@ class SCMainViewController: UITabBarController {
         setupComposeButton()
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return UIInterfaceOrientationMask.portrait
+    }
+    
     // FIXME: compose button observer
     @objc private func clickComposeButton(){
         print("click")

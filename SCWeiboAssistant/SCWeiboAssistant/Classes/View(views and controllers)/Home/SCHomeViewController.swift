@@ -14,13 +14,12 @@ class SCHomeViewController: SCBaseViewController {
         super.viewDidLoad()
     }
     @objc private func clickFriendButton(){
-        print("click")
         navigationController?.pushViewController(SCDemoViewController(), animated: true)
     }
 }
 extension SCHomeViewController{
     override func setupUI() {
         super.setupUI()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Friends", target: self, action: #selector(clickFriendButton), isBack: false)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(normalImageName: "navigationbar_friendsearch", highlightedImageName: "navigationbar_friendsearch_highlighted", target: self, action: #selector(clickFriendButton))
     }
 }

@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
     +(instancetype)imageButtonWithImageName:(NSString *)imageName andBackgroundImageName:(NSString *)bgImageName;
     +(instancetype)textButtonWithTitle:(NSString *)title andWithFontSize:(CGFloat)size andWithNormalColor:(UIColor *)nColor andWithHighlightColor:(UIColor *)hColor;
     +(instancetype)textButtonWithTitle:(NSString *)title andWithFontSize:(CGFloat)size andWithNormalColor:(UIColor *)nColor andWithHighlightColor:(UIColor *)hColor andWithBackgroundImageName:(NSString *)imageName;
+    -(void)imageButtonWithNormalImageName:(NSString *)normalImage andWithHighlightedImageName:(NSString *)highlightedImage;
 @end
 
 NS_ASSUME_NONNULL_END

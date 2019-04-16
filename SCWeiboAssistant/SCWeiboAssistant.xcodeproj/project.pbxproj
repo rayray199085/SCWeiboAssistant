@@ -36,6 +36,7 @@
 		0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */; };
 		0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */; };
 		0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */; };
+		0DDD256B226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		0D4325AE226471C000FBAC1B /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
 		0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+extension.swift"; sourceTree = "<group>"; };
 		0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDemoViewController.swift; sourceTree = "<group>"; };
+		0DDD2569226592DE006BE6EE /* UIScreen+SCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SCAddition.h"; sourceTree = "<group>"; };
+		0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+UISCreen_extenshion.m"; sourceTree = "<group>"; };
 		5BE6C868617C149D9B8DDC59 /* Pods_SCWeiboAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCWeiboAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF30161588E3A756C2BC8F1 /* Pods-SCWeiboAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCWeiboAssistant.release.xcconfig"; path = "Target Support Files/Pods-SCWeiboAssistant/Pods-SCWeiboAssistant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +292,8 @@
 				0D4325912264713C00FBAC1B /* CABasicAnimation+SCAddition.h */,
 				0D4325922264713C00FBAC1B /* UIButton+SCAddition.h */,
 				0D4325932264713C00FBAC1B /* UIImageView+SCAddition.h */,
+				0DDD2569226592DE006BE6EE /* UIScreen+SCAddition.h */,
+				0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 			files = (
 				0D4325A02264713C00FBAC1B /* UIButton+SCAddition.m in Sources */,
 				0D43257F22646F6A00FBAC1B /* SCMessageViewController.swift in Sources */,
+				0DDD256B226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m in Sources */,
 				0D4325A22264713C00FBAC1B /* NSObject+SCAddition.m in Sources */,
 				0D4325A92264713C00FBAC1B /* Bundle+extension.swift in Sources */,
 				0D4325A42264713C00FBAC1B /* UILabel+SCAddition.m in Sources */,
@@ -696,6 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CB5U428B8;
 				INFOPLIST_FILE = SCWeiboAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -716,6 +723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CB5U428B8;
 				INFOPLIST_FILE = SCWeiboAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
