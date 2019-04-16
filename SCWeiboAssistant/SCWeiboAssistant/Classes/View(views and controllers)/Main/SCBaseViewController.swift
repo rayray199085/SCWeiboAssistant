@@ -12,6 +12,13 @@ class SCBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+}
 
+// MARK: - setup UI
+extension SCBaseViewController{
+    @objc func setupUI(){
+        view.backgroundColor = UIColor.orange
     }
 }

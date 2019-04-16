@@ -10,7 +10,7 @@ import UIKit
 
 extension UIBarButtonItem{
     /// init barButtonItem with font size and title
-    convenience init(title: String, fontSize :CGFloat, target: Any?, action: Selector, isBack :Bool = false){
+    convenience init(title: String, fontSize :CGFloat = 16, target: Any?, action: Selector, isBack :Bool = false){
         let button = UIButton.textButton(withTitle: title, andWithFontSize: fontSize, andWithNormalColor: UIColor.darkGray, andWithHighlight: UIColor.orange)
         button.addTarget(target, action: action, for: .touchUpInside)
         if isBack{

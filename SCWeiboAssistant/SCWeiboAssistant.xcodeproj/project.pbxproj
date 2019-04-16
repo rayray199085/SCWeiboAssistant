@@ -13,7 +13,7 @@
 		0D43255422645EC400FBAC1B /* SCWeiboAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43255322645EC400FBAC1B /* SCWeiboAssistantTests.swift */; };
 		0D43255F22645EC400FBAC1B /* SCWeiboAssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43255E22645EC400FBAC1B /* SCWeiboAssistantUITests.swift */; };
 		0D43257622646E8200FBAC1B /* SCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43257522646E8200FBAC1B /* SCMainViewController.swift */; };
-		0D43257822646EBE00FBAC1B /* SCINavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43257722646EBE00FBAC1B /* SCINavigationViewController.swift */; };
+		0D43257822646EBE00FBAC1B /* SCNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43257722646EBE00FBAC1B /* SCNavigationViewController.swift */; };
 		0D43257A22646EFC00FBAC1B /* SCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43257922646EFC00FBAC1B /* SCBaseViewController.swift */; };
 		0D43257D22646F5200FBAC1B /* SCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43257C22646F5200FBAC1B /* SCHomeViewController.swift */; };
 		0D43257F22646F6A00FBAC1B /* SCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43257E22646F6A00FBAC1B /* SCMessageViewController.swift */; };
@@ -34,6 +34,8 @@
 		0D4325AA2264713C00FBAC1B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259A2264713C00FBAC1B /* String+extension.swift */; };
 		0D4325AB2264713C00FBAC1B /* UIPageControl+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259B2264713C00FBAC1B /* UIPageControl+extension.swift */; };
 		0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */; };
+		0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */; };
+		0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +68,7 @@
 		0D43255E22645EC400FBAC1B /* SCWeiboAssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCWeiboAssistantUITests.swift; sourceTree = "<group>"; };
 		0D43256022645EC400FBAC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D43257522646E8200FBAC1B /* SCMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCMainViewController.swift; sourceTree = "<group>"; };
-		0D43257722646EBE00FBAC1B /* SCINavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCINavigationViewController.swift; sourceTree = "<group>"; };
+		0D43257722646EBE00FBAC1B /* SCNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNavigationViewController.swift; sourceTree = "<group>"; };
 		0D43257922646EFC00FBAC1B /* SCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBaseViewController.swift; sourceTree = "<group>"; };
 		0D43257C22646F5200FBAC1B /* SCHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCHomeViewController.swift; sourceTree = "<group>"; };
 		0D43257E22646F6A00FBAC1B /* SCMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCMessageViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,8 @@
 		0D43259B2264713C00FBAC1B /* UIPageControl+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageControl+extension.swift"; sourceTree = "<group>"; };
 		0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
 		0D4325AE226471C000FBAC1B /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
+		0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+extension.swift"; sourceTree = "<group>"; };
+		0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDemoViewController.swift; sourceTree = "<group>"; };
 		5BE6C868617C149D9B8DDC59 /* Pods_SCWeiboAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCWeiboAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF30161588E3A756C2BC8F1 /* Pods-SCWeiboAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCWeiboAssistant.release.xcconfig"; path = "Target Support Files/Pods-SCWeiboAssistant/Pods-SCWeiboAssistant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,8 +248,9 @@
 		0D43257322646DE700FBAC1B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0DDD256422655DA8006BE6EE /* Test */,
 				0D43257522646E8200FBAC1B /* SCMainViewController.swift */,
-				0D43257722646EBE00FBAC1B /* SCINavigationViewController.swift */,
+				0D43257722646EBE00FBAC1B /* SCNavigationViewController.swift */,
 				0D43257922646EFC00FBAC1B /* SCBaseViewController.swift */,
 			);
 			path = Main;
@@ -291,6 +296,7 @@
 		0D4325942264713C00FBAC1B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */,
 				0D4325952264713C00FBAC1B /* UIImageView+extension.swift */,
 				0D4325962264713C00FBAC1B /* Date+extension.swift */,
 				0D4325972264713C00FBAC1B /* UILabel+extension.swift */,
@@ -303,13 +309,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0DDD256422655DA8006BE6EE /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		D38A890D34CF79CC10F77E79 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				03463E54F3F98CA7EE9A9A8B /* Pods-SCWeiboAssistant.debug.xcconfig */,
 				DEF30161588E3A756C2BC8F1 /* Pods-SCWeiboAssistant.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -512,17 +525,19 @@
 				0D4325A12264713C00FBAC1B /* UIImageView+SCAddition.m in Sources */,
 				0D4325A72264713C00FBAC1B /* UILabel+extension.swift in Sources */,
 				0D4325A32264713C00FBAC1B /* NSString+SCAddition.m in Sources */,
+				0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */,
 				0D4325A62264713C00FBAC1B /* Date+extension.swift in Sources */,
 				0D43258122646F7600FBAC1B /* SCDiscoverViewController.swift in Sources */,
 				0D4325A52264713C00FBAC1B /* UIImageView+extension.swift in Sources */,
 				0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */,
 				0D43259F2264713C00FBAC1B /* CABasicAnimation+SCAddition.m in Sources */,
+				0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */,
 				0D4325A82264713C00FBAC1B /* UIImage+extension.swift in Sources */,
 				0D43257A22646EFC00FBAC1B /* SCBaseViewController.swift in Sources */,
 				0D43257622646E8200FBAC1B /* SCMainViewController.swift in Sources */,
 				0D43258322646F8300FBAC1B /* SCProfileViewController.swift in Sources */,
 				0D4325AB2264713C00FBAC1B /* UIPageControl+extension.swift in Sources */,
-				0D43257822646EBE00FBAC1B /* SCINavigationViewController.swift in Sources */,
+				0D43257822646EBE00FBAC1B /* SCNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

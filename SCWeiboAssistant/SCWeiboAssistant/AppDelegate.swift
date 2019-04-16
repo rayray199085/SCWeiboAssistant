@@ -15,10 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow.initWindow(controllerName: "SCMainViewController")
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = SCMainViewController()
-        window?.makeKeyAndVisible()
         return true
     }
 }
