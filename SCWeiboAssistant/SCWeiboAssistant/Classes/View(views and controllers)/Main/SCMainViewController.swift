@@ -60,7 +60,6 @@ private extension SCMainViewController{
         let vc = cls.init()
         vc.title = title
         let normalImageName = "tabbar_\(imageName)"
-       
         vc.tabBarItem.image = UIImage(named: normalImageName)
         vc.tabBarItem.selectedImage = UIImage(named: normalImageName + "_selected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.orange], for: UIControl.State.highlighted)
