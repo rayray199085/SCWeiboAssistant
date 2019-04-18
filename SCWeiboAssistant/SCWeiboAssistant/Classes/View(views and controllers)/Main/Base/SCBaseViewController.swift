@@ -13,6 +13,7 @@ class SCBaseViewController: UIViewController {
     var tableView: UITableView?
     var refreshControl: UIRefreshControl?
     var isPullUp = false
+    var visitorInfo : [String : String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,7 @@ extension SCBaseViewController{
     
     private func setupVisitorView(){
         let visitiorView = SCVisitorView(frame: view.bounds)
+        visitiorView.visitorInfo = visitorInfo
         guard let naviBar = navigationController?.navigationBar else {
                 return
         }

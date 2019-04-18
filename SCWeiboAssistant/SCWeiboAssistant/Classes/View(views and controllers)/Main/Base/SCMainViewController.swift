@@ -36,11 +36,11 @@ private extension SCMainViewController{
      */
     func setupChildControllers(){
         let array = [
-            ["clsName":"SCHomeViewController", "title":"Home", "imageName":"home"],
-            ["clsName":"SCMessageViewController", "title":"Message", "imageName":"message_center"],
+            ["clsName":"SCHomeViewController", "title":"Home", "imageName":"home", "visitorInfo":["imageName":"","message":"It's free and always will be."]],
+            ["clsName":"SCMessageViewController", "title":"Message", "imageName":"message_center", "visitorInfo":["imageName":"visitordiscover_image_message","message":"We're the dot. in. com."]],
             ["clsName":"UIViewController"],
-            ["clsName":"SCDiscoverViewController", "title":"Discover", "imageName":"discover"],
-            ["clsName":"SCProfileViewController", "title":"Profile", "imageName":"profile"]]
+            ["clsName":"SCDiscoverViewController", "title":"Discover", "imageName":"discover", "visitorInfo":["imageName":"visitordiscover_image_message","message":"The Globe brings you the world in a single copy."]],
+            ["clsName":"SCProfileViewController", "title":"Profile", "imageName":"profile", "visitorInfo":["imageName":"visitordiscover_image_profile","message":"Take time to indulge."]]]
         var controllers = [UIViewController]()
         for dict in array{
             controllers.append(getController(dictionary: dict))
@@ -52,11 +52,12 @@ private extension SCMainViewController{
     ///
     /// - Parameter dict: dictionary
     /// - Returns: view controller
-    func getController(dictionary dict:[String: String])->UIViewController{
-        guard let clsName = dict["clsName"],
-        let title = dict["title"],
-        let imageName = dict["imageName"],
-        let cls = NSClassFromString("\(Bundle.main.nameSpace)." + clsName) as? UIViewController.Type else {
+    func getController(dictionary dict:[String: Any])->UIViewController{
+        guard let clsName = dict["clsName"] as? String,
+        let title = dict["title"] as? String,
+        let imageName = dict["imageName"] as? String,
+        let cls = NSClassFromString("\(Bundle.main.nameSpace)." + clsName) as? SCBaseViewController.Type,
+        let visitorInfo = dict["visitorInfo"] as? [String: String] else {
             return UIViewController()
         }
         let vc = cls.init()
@@ -69,6 +70,7 @@ private extension SCMainViewController{
         vc.tabBarItem.setTitleTextAttributes(
             [NSAttributedString.Key.foregroundColor : UIColor.orange],
             for: UIControl.State.highlighted)
+        vc.visitorInfo = visitorInfo
         let navigationController = SCNavigationViewController(rootViewController: vc)
         return navigationController
     }
