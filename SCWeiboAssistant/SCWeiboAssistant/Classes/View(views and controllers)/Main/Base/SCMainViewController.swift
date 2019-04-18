@@ -9,7 +9,9 @@
 import UIKit
 
 class SCMainViewController: UITabBarController {
-    private lazy var composeButton: UIButton = UIButton.imageButton(withImageName: "tabbar_compose_icon_add", andBackgroundImageName: "tabbar_compose_button")
+    private lazy var composeButton: UIButton = UIButton.imageButton(
+        withImageName: "tabbar_compose_icon_add",
+        andBackgroundImageName: "tabbar_compose_button")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +63,12 @@ private extension SCMainViewController{
         vc.title = title
         let normalImageName = "tabbar_\(imageName)"
         vc.tabBarItem.image = UIImage(named: normalImageName)
-        vc.tabBarItem.selectedImage = UIImage(named: normalImageName + "_selected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.orange], for: UIControl.State.highlighted)
+        vc.tabBarItem.selectedImage = UIImage(
+            named: normalImageName + "_selected")?.withRenderingMode(
+                UIImage.RenderingMode.alwaysOriginal)
+        vc.tabBarItem.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor : UIColor.orange],
+            for: UIControl.State.highlighted)
         let navigationController = SCNavigationViewController(rootViewController: vc)
         return navigationController
     }

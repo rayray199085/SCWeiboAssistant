@@ -34,6 +34,7 @@
 		0D4325AA2264713C00FBAC1B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259A2264713C00FBAC1B /* String+extension.swift */; };
 		0D4325AB2264713C00FBAC1B /* UIPageControl+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259B2264713C00FBAC1B /* UIPageControl+extension.swift */; };
 		0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */; };
+		0D5F99462268139B003A6E65 /* SCVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F99452268139B003A6E65 /* SCVisitorView.swift */; };
 		0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */; };
 		0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */; };
 		0DDD256B226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */; };
@@ -99,6 +100,7 @@
 		0D43259B2264713C00FBAC1B /* UIPageControl+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageControl+extension.swift"; sourceTree = "<group>"; };
 		0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
 		0D4325AE226471C000FBAC1B /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
+		0D5F99452268139B003A6E65 /* SCVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCVisitorView.swift; sourceTree = "<group>"; };
 		0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+extension.swift"; sourceTree = "<group>"; };
 		0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDemoViewController.swift; sourceTree = "<group>"; };
 		0DDD2569226592DE006BE6EE /* UIScreen+SCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SCAddition.h"; sourceTree = "<group>"; };
@@ -251,10 +253,9 @@
 		0D43257322646DE700FBAC1B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0D5F99432268134F003A6E65 /* Base */,
+				0D5F99442268135F003A6E65 /* VisitorView */,
 				0DDD256422655DA8006BE6EE /* Test */,
-				0D43257522646E8200FBAC1B /* SCMainViewController.swift */,
-				0D43257722646EBE00FBAC1B /* SCNavigationViewController.swift */,
-				0D43257922646EFC00FBAC1B /* SCBaseViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -312,6 +313,24 @@
 				0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0D5F99432268134F003A6E65 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0D43257522646E8200FBAC1B /* SCMainViewController.swift */,
+				0D43257722646EBE00FBAC1B /* SCNavigationViewController.swift */,
+				0D43257922646EFC00FBAC1B /* SCBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0D5F99442268135F003A6E65 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				0D5F99452268139B003A6E65 /* SCVisitorView.swift */,
+			);
+			path = VisitorView;
 			sourceTree = "<group>";
 		};
 		0DDD256422655DA8006BE6EE /* Test */ = {
@@ -538,6 +557,7 @@
 				0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */,
 				0D43259F2264713C00FBAC1B /* CABasicAnimation+SCAddition.m in Sources */,
 				0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */,
+				0D5F99462268139B003A6E65 /* SCVisitorView.swift in Sources */,
 				0D4325A82264713C00FBAC1B /* UIImage+extension.swift in Sources */,
 				0D43257A22646EFC00FBAC1B /* SCBaseViewController.swift in Sources */,
 				0D43257622646E8200FBAC1B /* SCMainViewController.swift in Sources */,

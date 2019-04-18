@@ -9,6 +9,7 @@
 import UIKit
 
 class SCBaseViewController: UIViewController {
+    var userLogon: Bool = false
     var tableView: UITableView?
     var refreshControl: UIRefreshControl?
     var isPullUp = false
@@ -28,7 +29,7 @@ extension SCBaseViewController{
     @objc func setupUI(){
 //        view.backgroundColor = UIColor.orange
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray]
-        setupTableView()
+        userLogon ? setupTableView() : setupVisitorView()
     }
     
     private func setupTableView(){
@@ -44,6 +45,14 @@ extension SCBaseViewController{
         refreshControl = UIRefreshControl()
         tableView.addSubview(refreshControl!)
         refreshControl?.addTarget(self, action: #selector(loadData), for: UIControl.Event.valueChanged)
+    }
+    
+    private func setupVisitorView(){
+        let visitiorView = SCVisitorView(frame: view.bounds)
+        guard let naviBar = navigationController?.navigationBar else {
+                return
+        }
+        view.insertSubview(visitiorView, belowSubview: naviBar)
     }
 }
 extension SCBaseViewController: UITableViewDelegate, UITableViewDataSource{

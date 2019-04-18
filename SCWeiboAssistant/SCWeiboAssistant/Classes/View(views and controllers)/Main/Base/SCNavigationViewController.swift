@@ -17,7 +17,12 @@ class SCNavigationViewController: UINavigationController {
         if children.count > 0{
              viewController.hidesBottomBarWhenPushed = true
             let leftBarButtonItem = children.count == 1 ? (children[0].title ?? "Back") : "Back"
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: leftBarButtonItem, fontSize: 16, target: self, action: #selector(goBack), isBack: true)
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
+                title: leftBarButtonItem,
+                fontSize: 16,
+                target: self,
+                action: #selector(goBack),
+                isBack: true)
         }
         super.pushViewController(viewController, animated: animated)
     }

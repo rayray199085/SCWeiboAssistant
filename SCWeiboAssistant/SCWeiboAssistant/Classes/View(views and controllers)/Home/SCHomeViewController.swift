@@ -32,7 +32,11 @@ class SCHomeViewController: SCBaseViewController {
 extension SCHomeViewController{
     override func setupUI() {
         super.setupUI()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(normalImageName: "navigationbar_friendsearch", highlightedImageName: "navigationbar_friendsearch_highlighted", target: self, action: #selector(clickFriendButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            normalImageName: "navigationbar_friendsearch",
+            highlightedImageName: "navigationbar_friendsearch_highlighted",
+            target: self,
+            action: #selector(clickFriendButton))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
 }
