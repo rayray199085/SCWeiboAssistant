@@ -18,8 +18,8 @@ class SCDemoViewController: SCBaseViewController {
     }
 }
 extension SCDemoViewController{
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
+        super.setupTableView()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", target: self, action: #selector(clickNextButton), isBack: false)
     }
 }

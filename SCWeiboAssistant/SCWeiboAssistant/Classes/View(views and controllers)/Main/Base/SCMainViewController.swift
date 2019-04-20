@@ -35,17 +35,20 @@ private extension SCMainViewController{
      tab bar con - > nav con -> base con
      */
     func setupChildControllers(){
-        let array = [
-            ["clsName":"SCHomeViewController", "title":"Home", "imageName":"home", "visitorInfo":["imageName":"","message":"It's free and always will be."]],
-            ["clsName":"SCMessageViewController", "title":"Message", "imageName":"message_center", "visitorInfo":["imageName":"visitordiscover_image_message","message":"We're the dot. in. com."]],
-            ["clsName":"UIViewController"],
-            ["clsName":"SCDiscoverViewController", "title":"Discover", "imageName":"discover", "visitorInfo":["imageName":"visitordiscover_image_message","message":"The Globe brings you the world in a single copy."]],
-            ["clsName":"SCProfileViewController", "title":"Profile", "imageName":"profile", "visitorInfo":["imageName":"visitordiscover_image_profile","message":"Take time to indulge."]]]
+        // load data from document file
+        let networkData = try? Data(contentsOf: URL(fileURLWithPath: NSString.getDocumentDirectory().appendingPathComponent("main.json")))
+         
+        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
+            let data = (networkData != nil) ? networkData : try? Data(contentsOf: URL(fileURLWithPath: path)),
+            let array = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] else{
+                return
+        }
         var controllers = [UIViewController]()
         for dict in array{
             controllers.append(getController(dictionary: dict))
         }
         viewControllers = controllers
+        (array as NSArray).write(toFile: "/Users/stephencao/Desktop/weibo.plist", atomically: true)
     }
     
     /// Use dictionary to create a controller

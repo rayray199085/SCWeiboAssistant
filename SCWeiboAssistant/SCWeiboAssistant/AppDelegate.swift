@@ -17,7 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow.initWindow(controllerName: "SCMainViewController")
         window?.backgroundColor = UIColor.white
+        loadAppInfo()
         return true
     }
 }
-
+private extension AppDelegate{
+    func loadAppInfo(){
+        DispatchQueue.global().async {
+            guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
+                let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else{
+                    return
+            }
+            try? data.write(to: URL(fileURLWithPath: NSString.getDocumentDirectory().appendingPathComponent("main.json")))
+        }
+    }
+}

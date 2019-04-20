@@ -9,6 +9,28 @@
 import UIKit
 
 class SCVisitorView: UIView {
+    lazy var signUpButton: UIButton = {
+        let button = UIButton.textButton(
+            withTitle: "Sign Up",
+            andWithFontSize: 16,
+            andWithNormalColor: UIColor.orange,
+            andWithHighlight: UIColor.black,
+            andWithBackgroundImageName: "common_button_white")
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
+        return button
+    }()
+    
+   lazy var loginButton: UIButton = {
+        let button = UIButton.textButton(
+            withTitle: "Login",
+            andWithFontSize: 16,
+            andWithNormalColor: UIColor.darkGray,
+            andWithHighlight: UIColor.black,
+            andWithBackgroundImageName: "common_button_white")
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
+        return button
+    }()
+    
     var visitorInfo: [String : String]?{
         didSet{
             guard let imageName = visitorInfo?["imageName"],
@@ -18,12 +40,21 @@ class SCVisitorView: UIView {
             descriptionLabel.text = message
 //          empty string means first page, no need to set image
             if imageName == ""{
+                startWheelRotationAnimation()
                 return
             }
-            houseImageView.image = UIImage(named: imageName)
-            wheelImageView.isHidden = true
+            wheelImageView.image = UIImage(named: imageName)
+            houseImageView.isHidden = true
             wheelMaskImageView.isHidden = true
         }
+    }
+    private func startWheelRotationAnimation(){
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = Double.pi * 2
+        anim.duration = 60
+        anim.repeatCount = MAXFLOAT
+        anim.isRemovedOnCompletion = false
+        wheelImageView.layer.add(anim, forKey: nil)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,28 +82,6 @@ class SCVisitorView: UIView {
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         return label
-    }()
-    
-    private lazy var signUpButton: UIButton = {
-       let button = UIButton.textButton(
-            withTitle: "Sign Up",
-            andWithFontSize: 16,
-            andWithNormalColor: UIColor.orange,
-            andWithHighlight: UIColor.black,
-            andWithBackgroundImageName: "common_button_white")
-        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
-        return button
-    }()
-    
-    private lazy var loginButton: UIButton = {
-        let button = UIButton.textButton(
-            withTitle: "Login",
-            andWithFontSize: 16,
-            andWithNormalColor: UIColor.darkGray,
-            andWithHighlight: UIColor.black,
-            andWithBackgroundImageName: "common_button_white")
-        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
-        return button
     }()
 }
 extension SCVisitorView{
@@ -161,11 +170,11 @@ extension SCVisitorView{
         
         addConstraint(NSLayoutConstraint(
             item: signUpButton,
-            attribute: NSLayoutConstraint.Attribute.centerX,
+            attribute: NSLayoutConstraint.Attribute.left,
             relatedBy: NSLayoutConstraint.Relation.equal,
             toItem: wheelImageView,
             attribute: NSLayoutConstraint.Attribute.left,
-            multiplier: 1.0, constant: 0))
+            multiplier: 1.0, constant: -margin))
         
         addConstraint(NSLayoutConstraint(
             item: loginButton,
@@ -178,11 +187,11 @@ extension SCVisitorView{
         
         addConstraint(NSLayoutConstraint(
             item: loginButton,
-            attribute: NSLayoutConstraint.Attribute.centerX,
+            attribute: NSLayoutConstraint.Attribute.right,
             relatedBy: NSLayoutConstraint.Relation.equal,
             toItem: wheelImageView,
             attribute: NSLayoutConstraint.Attribute.right,
-            multiplier: 1.0, constant: 0))
+            multiplier: 1.0, constant: margin))
         
         addConstraint(NSLayoutConstraint(
             item: loginButton,
@@ -227,12 +236,5 @@ extension SCVisitorView{
             attribute: NSLayoutConstraint.Attribute.top,
             multiplier: 1.0,
             constant: 0))
-        
-//        let anim = CABasicAnimation(keyPath: "transform.rotation")
-//        anim.toValue = Double.pi * 2
-//        anim.repeatCount = MAXFLOAT
-//        anim.duration = 60
-//        anim.isRemovedOnCompletion = false
-//        wheelImageView.layer.add(anim, forKey: nil)
     }
 }

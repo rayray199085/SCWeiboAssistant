@@ -30,8 +30,8 @@ class SCHomeViewController: SCBaseViewController {
     }
 }
 extension SCHomeViewController{
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
+        super.setupTableView()
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             normalImageName: "navigationbar_friendsearch",
             highlightedImageName: "navigationbar_friendsearch_highlighted",

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04854A3CE4592A8E0AC6A7A8 /* Pods_SCWeiboAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE6C868617C149D9B8DDC59 /* Pods_SCWeiboAssistant.framework */; };
+		0D0E2CFA226999DE00256D39 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D0E2CF9226999DD00256D39 /* main.json */; };
 		0D43253F22645EC300FBAC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43253E22645EC300FBAC1B /* AppDelegate.swift */; };
 		0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D43254522645EC400FBAC1B /* Assets.xcassets */; };
 		0D43255422645EC400FBAC1B /* SCWeiboAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43255322645EC400FBAC1B /* SCWeiboAssistantTests.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		03463E54F3F98CA7EE9A9A8B /* Pods-SCWeiboAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCWeiboAssistant.debug.xcconfig"; path = "Target Support Files/Pods-SCWeiboAssistant/Pods-SCWeiboAssistant.debug.xcconfig"; sourceTree = "<group>"; };
+		0D0E2CF9226999DD00256D39 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		0D43253B22645EC300FBAC1B /* SCWeiboAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCWeiboAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D43253E22645EC300FBAC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D43254522645EC400FBAC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		0D5F99432268134F003A6E65 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0D0E2CF9226999DD00256D39 /* main.json */,
 				0D43257522646E8200FBAC1B /* SCMainViewController.swift */,
 				0D43257722646EBE00FBAC1B /* SCNavigationViewController.swift */,
 				0D43257922646EFC00FBAC1B /* SCBaseViewController.swift */,
@@ -465,6 +468,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0E2CFA226999DE00256D39 /* main.json in Resources */,
 				0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,16 +24,25 @@ class SCBaseViewController: UIViewController {
         refreshControl?.endRefreshing()
     }
 }
+extension SCBaseViewController{
+    @objc private func signUp(){
+        print("signUp")
+    }
+    
+    @objc private func login(){
+        print("login")
+    }
+}
 
 // MARK: - setup UI
 extension SCBaseViewController{
-    @objc func setupUI(){
+    @objc private func setupUI(){
 //        view.backgroundColor = UIColor.orange
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray]
         userLogon ? setupTableView() : setupVisitorView()
     }
     
-    private func setupTableView(){
+    @objc func setupTableView(){
         tableView = UITableView(frame: view.bounds, style: UITableView.Style.plain)
         guard let tableView = tableView,
         let naviBar = navigationController?.navigationBar else {
@@ -54,7 +63,13 @@ extension SCBaseViewController{
         guard let naviBar = navigationController?.navigationBar else {
                 return
         }
+        visitiorView.signUpButton.addTarget(self, action: #selector(signUp), for: UIControl.Event.touchUpInside)
+        visitiorView.loginButton.addTarget(self, action: #selector(login), for: UIControl.Event.touchUpInside)
         view.insertSubview(visitiorView, belowSubview: naviBar)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Up", style: UIBarButtonItem.Style.plain, target: self, action: #selector(signUp))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", style: UIBarButtonItem.Style.plain, target: self, action: #selector(login))
+        naviBar.tintColor = UIColor.orange
     }
 }
 extension SCBaseViewController: UITableViewDelegate, UITableViewDataSource{
