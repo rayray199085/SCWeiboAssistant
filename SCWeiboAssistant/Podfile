@@ -6,4 +6,12 @@ target 'SCWeiboAssistant' do
   use_frameworks!
 
 pod "SDWebImage"
+pod "YYModel"
+pod "SVProgressHUD"
+pod "pop"
+pod "Alamofire"
+pod "AlamofireNetworkActivityIndicator"
+pod "HZPhotoBrowser"
+pod "FLAnimatedImage"
+pod "SCLAlertView"
 end

@@ -9,7 +9,7 @@
 import UIKit
 
 class SCBaseViewController: UIViewController {
-    var userLogon: Bool = false
+    var userLogon: Bool = true
     var tableView: UITableView?
     var refreshControl: UIRefreshControl?
     var isPullUp = false

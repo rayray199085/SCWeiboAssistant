@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 private let reuseIdentifier = "status_cell"
 class SCHomeViewController: SCBaseViewController {
     private lazy var statusList = [String]()
@@ -15,6 +17,10 @@ class SCHomeViewController: SCBaseViewController {
         navigationController?.pushViewController(SCDemoViewController(), animated: true)
     }
     override func loadData() {
+        SCNetworkManager.shared.getStatusList { (list, isSuccess) in
+            print(isSuccess)
+            print(list ?? "")
+        }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             for i in 0..<30 {
                 if self.isPullUp{
