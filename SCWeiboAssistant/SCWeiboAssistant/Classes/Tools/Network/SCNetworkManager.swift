@@ -11,7 +11,7 @@ import Alamofire
 
 class SCNetworkManager{
     static let shared = SCNetworkManager()
-    var accessToken: String? = "2.00aDhGmB0LD4Zk9321b34e6ayua33B"
+    var accessToken: String? = "2.00JsyvjHuHAokC6cabac82170_xd1R"//"2.00aDhGmB0LD4Zk9321b34e6ayua33B"
     private init() {
         
     }

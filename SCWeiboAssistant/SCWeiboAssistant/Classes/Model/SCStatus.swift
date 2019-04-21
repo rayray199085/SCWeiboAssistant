@@ -9,10 +9,8 @@
 import UIKit
 import YYModel
 class SCStatus: NSObject {
-    var id: Int64 = 0
-    var text: String?
-    
-    
+    @objc var id: Int64 = 0
+    @objc var text: String?
     override var description: String{
         return yy_modelDescription()
     }
