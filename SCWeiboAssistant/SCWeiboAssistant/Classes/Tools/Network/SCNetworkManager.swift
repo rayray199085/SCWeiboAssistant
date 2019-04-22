@@ -11,7 +11,12 @@ import Alamofire
 
 class SCNetworkManager{
     static let shared = SCNetworkManager()
-    var accessToken: String? = "2.00JsyvjHuHAokC6cabac82170_xd1R"//"2.00aDhGmB0LD4Zk9321b34e6ayua33B"
+    var accessToken: String? //= "2.00aDhGmB0LD4Zk9321b34e6ayua33B"
+      //"2.00JsyvjH0cJmGZ5a9fbaaaaf0nOa93"
+    var uid: String? = "1626992442"//"7091683637"
+    var userLogon: Bool{
+        return accessToken != nil
+    }
     private init() {
         
     }
@@ -55,7 +60,7 @@ class SCNetworkManager{
             completion(
                 dataResponse.result.value,
                 dataResponse.result.isSuccess,
-                dataResponse.response?.statusCode ?? -1,
+                dataResponse.response?.statusCode ?? 403,
                 dataResponse.result.error)
         }
     }

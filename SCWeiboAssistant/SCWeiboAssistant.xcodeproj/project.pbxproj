@@ -39,6 +39,9 @@
 		0D4325AA2264713C00FBAC1B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259A2264713C00FBAC1B /* String+extension.swift */; };
 		0D4325AB2264713C00FBAC1B /* UIPageControl+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259B2264713C00FBAC1B /* UIPageControl+extension.swift */; };
 		0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */; };
+		0D4478BA226D43A20036D572 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4478B9226D43A20036D572 /* UIApplication+extension.swift */; };
+		0D4478BE226D8F080036D572 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4478BD226D8F080036D572 /* WeiboCommon.swift */; };
+		0D4478C1226D91F30036D572 /* SCOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4478C0226D91F30036D572 /* SCOAuthViewController.swift */; };
 		0D5F99462268139B003A6E65 /* SCVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F99452268139B003A6E65 /* SCVisitorView.swift */; };
 		0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */; };
 		0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */; };
@@ -111,6 +114,9 @@
 		0D43259B2264713C00FBAC1B /* UIPageControl+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageControl+extension.swift"; sourceTree = "<group>"; };
 		0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
 		0D4325AE226471C000FBAC1B /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
+		0D4478B9226D43A20036D572 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
+		0D4478BD226D8F080036D572 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
+		0D4478C0226D91F30036D572 /* SCOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCOAuthViewController.swift; sourceTree = "<group>"; };
 		0D5F99452268139B003A6E65 /* SCVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCVisitorView.swift; sourceTree = "<group>"; };
 		0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+extension.swift"; sourceTree = "<group>"; };
 		0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDemoViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 				0D4325AE226471C000FBAC1B /* Weibo-Bridge.h */,
 				0D43254522645EC400FBAC1B /* Assets.xcassets */,
 				0D43254A22645EC400FBAC1B /* Info.plist */,
+				0D4478BD226D8F080036D572 /* WeiboCommon.swift */,
 			);
 			path = SCWeiboAssistant;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				0D5F99432268134F003A6E65 /* Base */,
+				0D4478BF226D91D40036D572 /* OAuth */,
 				0D5F99442268135F003A6E65 /* VisitorView */,
 				0DDD256422655DA8006BE6EE /* Test */,
 			);
@@ -352,8 +360,17 @@
 				0D43259A2264713C00FBAC1B /* String+extension.swift */,
 				0D43259B2264713C00FBAC1B /* UIPageControl+extension.swift */,
 				0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */,
+				0D4478B9226D43A20036D572 /* UIApplication+extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0D4478BF226D91D40036D572 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				0D4478C0226D91F30036D572 /* SCOAuthViewController.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		0D5F99432268134F003A6E65 /* Base */ = {
@@ -616,6 +633,7 @@
 				0D43258122646F7600FBAC1B /* SCDiscoverViewController.swift in Sources */,
 				0D4325A52264713C00FBAC1B /* UIImageView+extension.swift in Sources */,
 				0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */,
+				0D4478C1226D91F30036D572 /* SCOAuthViewController.swift in Sources */,
 				0D43259F2264713C00FBAC1B /* CABasicAnimation+SCAddition.m in Sources */,
 				0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */,
 				0D000452226AAAE400BB073D /* FFLabel.swift in Sources */,
@@ -623,7 +641,9 @@
 				0DE8294E226BF4CE00545341 /* SCStatusListViewModel.swift in Sources */,
 				0D000456226AAE1500BB073D /* SCNetworkManager.swift in Sources */,
 				0D4325A82264713C00FBAC1B /* UIImage+extension.swift in Sources */,
+				0D4478BA226D43A20036D572 /* UIApplication+extension.swift in Sources */,
 				0D43257A22646EFC00FBAC1B /* SCBaseViewController.swift in Sources */,
+				0D4478BE226D8F080036D572 /* WeiboCommon.swift in Sources */,
 				0D43257622646E8200FBAC1B /* SCMainViewController.swift in Sources */,
 				0D43258322646F8300FBAC1B /* SCProfileViewController.swift in Sources */,
 				0D4325AB2264713C00FBAC1B /* UIPageControl+extension.swift in Sources */,

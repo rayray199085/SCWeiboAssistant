@@ -9,7 +9,6 @@
 import UIKit
 
 class SCBaseViewController: UIViewController {
-    var userLogon: Bool = true
     var tableView: UITableView?
     var refreshControl: UIRefreshControl?
     var isPullUp = false
@@ -18,7 +17,7 @@ class SCBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadData()
+        SCNetworkManager.shared.userLogon ? loadData() :()
     }
     @objc func loadData(){
         refreshControl?.endRefreshing()
@@ -30,6 +29,7 @@ extension SCBaseViewController{
     }
     
     @objc private func login(){
+        NotificationCenter.default.post(name: NSNotification.Name(SCUserShouldLoginNotification), object: nil)
         print("login")
     }
 }
@@ -39,7 +39,7 @@ extension SCBaseViewController{
     @objc private func setupUI(){
 //        view.backgroundColor = UIColor.orange
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray]
-        userLogon ? setupTableView() : setupVisitorView()
+        SCNetworkManager.shared.userLogon ? setupTableView() : setupVisitorView()
     }
     
     @objc func setupTableView(){

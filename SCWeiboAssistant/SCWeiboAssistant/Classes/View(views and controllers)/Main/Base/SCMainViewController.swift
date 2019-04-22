@@ -9,6 +9,7 @@
 import UIKit
 
 class SCMainViewController: UITabBarController {
+    private var timer: Timer?
     private lazy var composeButton: UIButton = UIButton.imageButton(
         withImageName: "tabbar_compose_icon_add",
         andBackgroundImageName: "tabbar_compose_button")
@@ -17,6 +18,20 @@ class SCMainViewController: UITabBarController {
         super.viewDidLoad()
         setupChildControllers()
         setupComposeButton()
+        setupTimer()
+        delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLoginNotification), name: NSNotification.Name(SCUserShouldLoginNotification), object: nil)
+        
+    }
+    @objc private func handleLoginNotification(){
+        let nav = UINavigationController(rootViewController: SCOAuthViewController())
+        present(nav, animated: true, completion: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self
+            , name: NSNotification.Name(SCUserShouldLoginNotification), object: nil)
+        timer?.invalidate()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
@@ -26,6 +41,34 @@ class SCMainViewController: UITabBarController {
     // FIXME: compose button observer
     @objc private func clickComposeButton(){
         print("click")
+    }
+}
+extension SCMainViewController: UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if !SCNetworkManager.shared.userLogon{
+            return true
+        }
+        let index = children.firstIndex(of: viewController) ?? 0
+        if selectedViewController == viewController && index == 0{
+            let vc = viewController.children[0] as! SCHomeViewController
+            let offset = vc.navigationController?.navigationBar.frame.maxY ?? 64
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -offset), animated: true)
+            vc.loadData()
+        }
+        return !viewController.isMember(of: UIViewController.self)
+    }
+}
+private extension SCMainViewController{
+    func setupTimer(){
+        timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true, block: { (timer) in
+            if !SCNetworkManager.shared.userLogon{
+                return
+            }
+            SCNetworkManager.shared.getUnreadStatusCount { (unreadStatusCount) in
+                self.tabBar.items?[0].badgeValue = unreadStatusCount > 0 ? "\(unreadStatusCount)" : nil
+                UIApplication.shared.applicationIconBadgeNumber = unreadStatusCount
+            }
+        })
     }
 }
 private extension SCMainViewController{
@@ -45,7 +88,7 @@ private extension SCMainViewController{
         }
         var controllers = [UIViewController]()
         for dict in array{
-            controllers.append(getController(dictionary: dict))
+            controllers.append(getController(dict: dict))
         }
         viewControllers = controllers
         (array as NSArray).write(toFile: "/Users/stephencao/Desktop/weibo.plist", atomically: true)
@@ -55,7 +98,7 @@ private extension SCMainViewController{
     ///
     /// - Parameter dict: dictionary
     /// - Returns: view controller
-    func getController(dictionary dict:[String: Any])->UIViewController{
+    func getController(dict:[String: Any])->UIViewController{
         guard let clsName = dict["clsName"] as? String,
         let title = dict["title"] as? String,
         let imageName = dict["imageName"] as? String,
@@ -82,7 +125,7 @@ private extension SCMainViewController{
     func setupComposeButton(){
         tabBar.addSubview(composeButton)
         // calculate button location
-        let itemWidth = tabBar.bounds.width / CGFloat(children.count) - 1
+        let itemWidth = tabBar.bounds.width / CGFloat(children.count)
         composeButton.frame = tabBar.bounds.insetBy(dx: itemWidth * 2, dy: 0)
         composeButton.addTarget(self, action: #selector(clickComposeButton), for: UIControl.Event.touchUpInside)
     }

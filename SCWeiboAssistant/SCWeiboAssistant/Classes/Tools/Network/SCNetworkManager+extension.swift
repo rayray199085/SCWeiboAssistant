@@ -19,4 +19,16 @@ extension SCNetworkManager{
             completion(array,isSuccess)
         }
     }
+    func getUnreadStatusCount(completion:@escaping (_ unreadStatusCount: Int)->()){
+        guard let uid = uid else {
+            completion(0)
+            return
+        }
+        let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
+        let params = ["uid":uid]
+        requestWithToken(urlString: urlString, method: HTTPMethod.get, params: params) { (res, isSuccess) in
+            let unreadStatusCount = (res as? [String: Any])?["status"] as? Int
+            completion(unreadStatusCount ?? 0)
+        }
+    }
 }
