@@ -43,6 +43,8 @@
 		0D4478BE226D8F080036D572 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4478BD226D8F080036D572 /* WeiboCommon.swift */; };
 		0D4478C1226D91F30036D572 /* SCOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4478C0226D91F30036D572 /* SCOAuthViewController.swift */; };
 		0D5F99462268139B003A6E65 /* SCVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F99452268139B003A6E65 /* SCVisitorView.swift */; };
+		0D7D3581226E942900533698 /* WKWebView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D3580226E942900533698 /* WKWebView+extension.swift */; };
+		0D7D358A226EEBD300533698 /* SCUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D3589226EEBD300533698 /* SCUserAccount.swift */; };
 		0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */; };
 		0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */; };
 		0DDD256B226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */; };
@@ -118,6 +120,8 @@
 		0D4478BD226D8F080036D572 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		0D4478C0226D91F30036D572 /* SCOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCOAuthViewController.swift; sourceTree = "<group>"; };
 		0D5F99452268139B003A6E65 /* SCVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCVisitorView.swift; sourceTree = "<group>"; };
+		0D7D3580226E942900533698 /* WKWebView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+extension.swift"; sourceTree = "<group>"; };
+		0D7D3589226EEBD300533698 /* SCUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCUserAccount.swift; sourceTree = "<group>"; };
 		0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+extension.swift"; sourceTree = "<group>"; };
 		0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDemoViewController.swift; sourceTree = "<group>"; };
 		0DDD2569226592DE006BE6EE /* UIScreen+SCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SCAddition.h"; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		0D000453226AAD3500BB073D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0D7D3588226EEB9900533698 /* Model */,
 				0D000455226AAE1500BB073D /* SCNetworkManager.swift */,
 				0D00045A226AE1FE00BB073D /* SCNetworkManager+extension.swift */,
 			);
@@ -361,6 +366,7 @@
 				0D43259B2264713C00FBAC1B /* UIPageControl+extension.swift */,
 				0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */,
 				0D4478B9226D43A20036D572 /* UIApplication+extension.swift */,
+				0D7D3580226E942900533698 /* WKWebView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,6 +396,14 @@
 				0D5F99452268139B003A6E65 /* SCVisitorView.swift */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		0D7D3588226EEB9900533698 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D7D3589226EEBD300533698 /* SCUserAccount.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0DDD256422655DA8006BE6EE /* Test */ = {
@@ -616,6 +630,8 @@
 				0D4325A02264713C00FBAC1B /* UIButton+SCAddition.m in Sources */,
 				0D43257F22646F6A00FBAC1B /* SCMessageViewController.swift in Sources */,
 				0D0004CF226B044F00BB073D /* SCStatus.swift in Sources */,
+				0D7D358A226EEBD300533698 /* SCUserAccount.swift in Sources */,
+				0D7D3581226E942900533698 /* WKWebView+extension.swift in Sources */,
 				0DDD256B226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m in Sources */,
 				0D4325A22264713C00FBAC1B /* NSObject+SCAddition.m in Sources */,
 				0D00045B226AE1FE00BB073D /* SCNetworkManager+extension.swift in Sources */,

@@ -9,3 +9,6 @@
 import Foundation
 
 let SCUserShouldLoginNotification = "SCUserShouldLoginNotification"
+let SCAppKey = "688141545"
+let SCAppSecret = "72a8bc39b23d689acba994bf3f4ea160"
+let SCRedirectURI = "http://baidu.com"

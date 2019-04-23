@@ -20,7 +20,7 @@ extension SCNetworkManager{
         }
     }
     func getUnreadStatusCount(completion:@escaping (_ unreadStatusCount: Int)->()){
-        guard let uid = uid else {
+        guard let uid = userAccount.uid else {
             completion(0)
             return
         }
@@ -29,6 +29,23 @@ extension SCNetworkManager{
         requestWithToken(urlString: urlString, method: HTTPMethod.get, params: params) { (res, isSuccess) in
             let unreadStatusCount = (res as? [String: Any])?["status"] as? Int
             completion(unreadStatusCount ?? 0)
+        }
+    }
+}
+extension SCNetworkManager{
+    func getAccessToken(code: String,completion:@escaping (_ isSuccess: Bool)->()){
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        let params = ["client_id": SCAppKey,
+                      "client_secret": SCAppSecret,
+                      "grant_type": "authorization_code",
+                      "code":code,
+                      "redirect_uri": SCRedirectURI]
+        request(urlString: urlString, method: HTTPMethod.post, params: params) { (res, isSuccess, statusCode, error) in
+            guard let dict = res as? [String: Any] else{
+                completion(false)
+                return
+            }
+            completion(self.userAccount.yy_modelSet(with: dict))
         }
     }
 }

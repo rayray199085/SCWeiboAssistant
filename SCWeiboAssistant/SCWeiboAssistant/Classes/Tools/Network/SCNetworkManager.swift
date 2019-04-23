@@ -11,11 +11,10 @@ import Alamofire
 
 class SCNetworkManager{
     static let shared = SCNetworkManager()
-    var accessToken: String? //= "2.00aDhGmB0LD4Zk9321b34e6ayua33B"
-      //"2.00JsyvjH0cJmGZ5a9fbaaaaf0nOa93"
-    var uid: String? = "1626992442"//"7091683637"
+    lazy var userAccount = SCUserAccount()
+    
     var userLogon: Bool{
-        return accessToken != nil
+        return userAccount.access_token != nil
     }
     private init() {
         
@@ -29,7 +28,7 @@ class SCNetworkManager{
     ///   - params: parameters in dictionary
     ///   - completion: json(array/ dictionary), isSuccess
     func requestWithToken(urlString: String,method: HTTPMethod,params:[String:Any]?, completion:@escaping (_ list:Any?, _ isSuccess: Bool)->()){
-        guard let token = accessToken else{
+        guard let token = userAccount.access_token else{
             // FIXME: no token exists send notification
             completion(nil,false)
             return
@@ -56,7 +55,7 @@ class SCNetworkManager{
     ///   - params: parameters in dictionary
     ///   - completion: json(array/ dictionary), isSuccess, error
     func request(urlString:String, method:HTTPMethod, params:[String:Any]?, completion :@escaping (_ response: Any?,_ isSuccess: Bool, _ statusCode: Int,_ error: Error?)->() ){
-        Alamofire.request(urlString, method: HTTPMethod.get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (dataResponse) in
+        Alamofire.request(urlString, method: method, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (dataResponse) in
             completion(
                 dataResponse.result.value,
                 dataResponse.result.isSuccess,
