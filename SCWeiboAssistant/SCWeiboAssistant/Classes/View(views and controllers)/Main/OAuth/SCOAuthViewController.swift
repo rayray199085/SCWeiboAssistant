@@ -36,7 +36,7 @@ class SCOAuthViewController: UIViewController {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     @objc private func AutoFill(){
-        webView.autoFillUsernameAndPassword(username: "931916976@qq.com", password: "1234asdf")
+        webView.autoFillUsernameAndPassword(username: "0061450231088", password: "Myd900524")
     }
 }
 extension SCOAuthViewController: WKNavigationDelegate{
@@ -52,7 +52,12 @@ extension SCOAuthViewController: WKNavigationDelegate{
         }
         let code = ((navigationAction.request.url?.query)! as NSString).substring(from: "code=".count)
         SCNetworkManager.shared.getAccessToken(code: code) { (isSuccess) in
-            
+            if !isSuccess{
+                SVProgressHUD.showInfo(withStatus: "Can not connect to the Internet.")
+            }else{
+                NotificationCenter.default.post(name: NSNotification.Name(SCUserSuccessLoginNotification), object: nil)
+                self.goBack()
+            }
         }
         decisionHandler(WKNavigationActionPolicy.cancel)
     }

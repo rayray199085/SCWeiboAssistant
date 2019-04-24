@@ -14,6 +14,7 @@ class SCNetworkManager{
     lazy var userAccount = SCUserAccount()
     
     var userLogon: Bool{
+        print(NSString.getDocumentDirectory())
         return userAccount.access_token != nil
     }
     private init() {
@@ -29,7 +30,7 @@ class SCNetworkManager{
     ///   - completion: json(array/ dictionary), isSuccess
     func requestWithToken(urlString: String,method: HTTPMethod,params:[String:Any]?, completion:@escaping (_ list:Any?, _ isSuccess: Bool)->()){
         guard let token = userAccount.access_token else{
-            // FIXME: no token exists send notification
+            NotificationCenter.default.post(name: NSNotification.Name(SCUserShouldLoginNotification), object: nil)
             completion(nil,false)
             return
         }
@@ -40,7 +41,7 @@ class SCNetworkManager{
         params?["access_token"] = token
         request(urlString: urlString, method: method, params: params) { (res, isSuccess, statusCode, _) in
             if statusCode == 403 {
-                // FIXME: handle overdue token send notification
+                NotificationCenter.default.post(name: NSNotification.Name(SCUserShouldLoginNotification), object: "invalid token")
                 completion(nil,false)
                 return
             }

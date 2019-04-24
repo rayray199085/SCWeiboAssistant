@@ -7,18 +7,16 @@
 //
 
 import UIKit
+import SVProgressHUD
+import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
-        application.requestAuthorization { (isSuccess) in
-            print("Request authorization \(isSuccess ? "successfully" : "failed")")
-        }
+        setupBasicSettings()
+        requestAuthorization(application: application)
         window = UIWindow.initWindow(controllerName: "SCMainViewController")
         window?.backgroundColor = UIColor.white
         loadAppInfo()
@@ -33,6 +31,17 @@ private extension AppDelegate{
                     return
             }
             try? data.write(to: URL(fileURLWithPath: NSString.getDocumentDirectory().appendingPathComponent("main.json")))
+        }
+    }
+}
+private extension AppDelegate{
+    func setupBasicSettings(){
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+    }
+    func requestAuthorization(application: UIApplication){
+        application.requestAuthorization { (isSuccess) in
+            print("Request authorization \(isSuccess ? "successfully" : "failed")")
         }
     }
 }

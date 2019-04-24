@@ -46,6 +46,7 @@ extension SCNetworkManager{
                 return
             }
             completion(self.userAccount.yy_modelSet(with: dict))
+            self.userAccount.saveUserInfo()
         }
     }
 }

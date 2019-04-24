@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SCMainViewController: UITabBarController {
     private var timer: Timer?
@@ -23,9 +24,18 @@ class SCMainViewController: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleLoginNotification), name: NSNotification.Name(SCUserShouldLoginNotification), object: nil)
         
     }
-    @objc private func handleLoginNotification(){
+    @objc private func handleLoginNotification(notification: Notification){
+        var delay = DispatchTime.now()
+        if (notification.object as? String) == "invalid token"{
+            delay = DispatchTime.now() + 1.0
+            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.gradient)
+            SVProgressHUD.showInfo(withStatus: "Invalid Token")
+        }
         let nav = UINavigationController(rootViewController: SCOAuthViewController())
-        present(nav, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: delay) {
+            self.present(nav, animated: true, completion: nil)
+            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
+        }
     }
     
     deinit {
@@ -54,6 +64,8 @@ extension SCMainViewController: UITabBarControllerDelegate{
             let offset = vc.navigationController?.navigationBar.frame.maxY ?? 64
             vc.tableView?.setContentOffset(CGPoint(x: 0, y: -offset), animated: true)
             vc.loadData()
+            tabBar.items?[0].badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
         return !viewController.isMember(of: UIViewController.self)
     }

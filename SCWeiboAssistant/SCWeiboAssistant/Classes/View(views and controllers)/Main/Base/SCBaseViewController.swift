@@ -18,6 +18,10 @@ class SCBaseViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         SCNetworkManager.shared.userLogon ? loadData() :()
+        NotificationCenter.default.addObserver(self, selector: #selector(successLogin), name: NSNotification.Name(SCUserSuccessLoginNotification), object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(SCUserSuccessLoginNotification), object: self)
     }
     @objc func loadData(){
         refreshControl?.endRefreshing()
@@ -30,7 +34,12 @@ extension SCBaseViewController{
     
     @objc private func login(){
         NotificationCenter.default.post(name: NSNotification.Name(SCUserShouldLoginNotification), object: nil)
-        print("login")
+    }
+    @objc private func successLogin(){
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.rightBarButtonItem = nil
+        view = nil
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(SCUserSuccessLoginNotification), object: nil)
     }
 }
 
