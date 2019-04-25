@@ -23,6 +23,9 @@ class SCHomeViewController: SCBaseViewController {
             self.isPullUp = false
         }
     }
+    @objc private func clickTitleButton(button: UIButton){
+        button.isSelected = !button.isSelected
+    }
 }
 extension SCHomeViewController{
     override func setupTableView() {
@@ -33,6 +36,13 @@ extension SCHomeViewController{
             target: self,
             action: #selector(clickFriendButton))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        setupNavigationItemTitle()
+    }
+    
+    private func setupNavigationItemTitle(){
+        let titleButton = SCNavigationItemTitleButton(title: SCNetworkManager.shared.userAccount.screen_name)
+        titleButton.addTarget(self, action: #selector(clickTitleButton), for: UIControl.Event.touchUpInside)
+        navigationItem.titleView  = titleButton
     }
 }
 extension SCHomeViewController{

@@ -20,6 +20,7 @@ class SCMainViewController: UITabBarController {
         setupChildControllers()
         setupComposeButton()
         setupTimer()
+        setupSplashViews()
         delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(handleLoginNotification), name: NSNotification.Name(SCUserShouldLoginNotification), object: nil)
         
@@ -29,7 +30,7 @@ class SCMainViewController: UITabBarController {
         if (notification.object as? String) == "invalid token"{
             delay = DispatchTime.now() + 1.0
             SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.gradient)
-            SVProgressHUD.showInfo(withStatus: "Invalid Token")
+            SVProgressHUD.showInfo(withStatus: "Invalid token, please login again.")
         }
         let nav = UINavigationController(rootViewController: SCOAuthViewController())
         DispatchQueue.main.asyncAfter(deadline: delay) {
@@ -140,5 +141,15 @@ private extension SCMainViewController{
         let itemWidth = tabBar.bounds.width / CGFloat(children.count)
         composeButton.frame = tabBar.bounds.insetBy(dx: itemWidth * 2, dy: 0)
         composeButton.addTarget(self, action: #selector(clickComposeButton), for: UIControl.Event.touchUpInside)
+    }
+    
+    func setupSplashViews(){
+        if !SCNetworkManager.shared.userLogon{
+            return
+        }
+        let recordVersion = UserDefaults.standard.object(forKey: "version") as? String
+        let v =  recordVersion != Bundle.main.currentVersion ? SCNewFeatureView() : SCWelcomePageView.welcomePageView()
+        view.addSubview(v)
+        UserDefaults.standard.set(Bundle.main.currentVersion, forKey: "version")
     }
 }

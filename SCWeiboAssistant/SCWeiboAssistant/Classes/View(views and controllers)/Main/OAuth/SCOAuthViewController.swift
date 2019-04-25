@@ -53,7 +53,7 @@ extension SCOAuthViewController: WKNavigationDelegate{
         let code = ((navigationAction.request.url?.query)! as NSString).substring(from: "code=".count)
         SCNetworkManager.shared.getAccessToken(code: code) { (isSuccess) in
             if !isSuccess{
-                SVProgressHUD.showInfo(withStatus: "Can not connect to the Internet.")
+                SVProgressHUD.showInfo(withStatus: "Connection Failure.")
             }else{
                 NotificationCenter.default.post(name: NSNotification.Name(SCUserSuccessLoginNotification), object: nil)
                 self.goBack()

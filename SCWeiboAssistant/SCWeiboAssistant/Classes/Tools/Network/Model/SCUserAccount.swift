@@ -18,6 +18,9 @@ class SCUserAccount: NSObject {
         }
     }
     @objc var expiresDate: Date?
+    @objc var screen_name: String?
+    @objc var avatar_large: String?
+    
     override var description: String{
         return yy_modelDescription()
     }

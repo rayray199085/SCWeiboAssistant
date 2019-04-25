@@ -31,6 +31,17 @@ extension SCNetworkManager{
             completion(unreadStatusCount ?? 0)
         }
     }
+    
+    func getUserInfo(completion:@escaping (_ dict: [String: Any])->()){
+        guard let uid = userAccount.uid else{
+            return
+        }
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        let params = ["uid": uid]
+        requestWithToken(urlString: urlString, method: HTTPMethod.get, params: params) { (res, isSuccess) in
+            completion((res as? [String: Any]) ?? [:])
+        }
+    }
 }
 extension SCNetworkManager{
     func getAccessToken(code: String,completion:@escaping (_ isSuccess: Bool)->()){
@@ -41,12 +52,16 @@ extension SCNetworkManager{
                       "code":code,
                       "redirect_uri": SCRedirectURI]
         request(urlString: urlString, method: HTTPMethod.post, params: params) { (res, isSuccess, statusCode, error) in
-            guard let dict = res as? [String: Any] else{
+            guard let tokenDict = res as? [String: Any] else{
                 completion(false)
                 return
             }
-            completion(self.userAccount.yy_modelSet(with: dict))
-            self.userAccount.saveUserInfo()
+            self.userAccount.yy_modelSet(with: tokenDict)
+            self.getUserInfo(completion: { (userInfoDict) in
+                self.userAccount.yy_modelSet(with: userInfoDict)
+                self.userAccount.saveUserInfo()
+                completion(isSuccess)
+            })
         }
     }
 }
