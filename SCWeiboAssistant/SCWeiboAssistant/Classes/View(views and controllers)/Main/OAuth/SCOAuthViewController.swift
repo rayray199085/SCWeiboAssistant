@@ -36,7 +36,7 @@ class SCOAuthViewController: UIViewController {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     @objc private func AutoFill(){
-        webView.autoFillUsernameAndPassword(username: "0061450231088", password: "Myd900524")
+        webView.autoFillUsernameAndPassword(username: "931916976@qq.com", password: "1234asdf")
     }
 }
 extension SCOAuthViewController: WKNavigationDelegate{

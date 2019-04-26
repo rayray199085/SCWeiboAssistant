@@ -15,7 +15,7 @@ extension UIImageView{
     ///   - urlString: image url string
     ///   - placeholderImage: placeholder
     ///   - isAvatar: ture if this image is used for avatar
-    func setImage(urlString: String?,placeholderImage: UIImage?, isAvatar:Bool = false){
+    func setImage(urlString: String?,backgroundColor: UIColor,placeholderImage: UIImage?, isAvatar:Bool = false, frameColor: UIColor = UIColor.lightGray){
         guard let imageUrlString = urlString,
             let url = URL(string: imageUrlString) else {
             image = placeholderImage
@@ -25,7 +25,7 @@ extension UIImageView{
 
         }) { [weak self] (image, error, cacheType, imageURL) in//UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL
             if isAvatar{
-                 self?.image = image?.setCircleImage(size: self?.bounds.size, backgroundColor: UIColor.white, hasFrame: true, frameColor: UIColor.lightGray)
+                 self?.image = image?.setCircleImage(size: self?.bounds.size, backgroundColor: backgroundColor, hasFrame: true, frameColor: frameColor)
             }else{
                 self?.image = image?.modifyImageSize(size: self?.bounds.size)
             }

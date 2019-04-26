@@ -26,7 +26,7 @@
                         <constraint firstAttribute="height" constant="85" id="nck-XX-5SI"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4i-b3-0Yo">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4i-b3-0Yo">
                     <rect key="frame" x="129" y="527" width="117.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,6 +45,11 @@
                 <constraint firstItem="pLz-N4-xc4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wkO-jj-Iti"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="avatarImageView" destination="pLz-N4-xc4" id="4jf-6k-fV6"/>
+                <outlet property="imgBottomCons" destination="MHe-Cs-Yxj" id="jgm-ph-S5x"/>
+                <outlet property="welcomeLabel" destination="l4i-b3-0Yo" id="Qx6-bK-mQC"/>
+            </connections>
         </view>
     </objects>
     <resources>

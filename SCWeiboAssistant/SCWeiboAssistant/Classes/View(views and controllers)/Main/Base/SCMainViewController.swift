@@ -148,7 +148,7 @@ private extension SCMainViewController{
             return
         }
         let recordVersion = UserDefaults.standard.object(forKey: "version") as? String
-        let v =  recordVersion != Bundle.main.currentVersion ? SCNewFeatureView() : SCWelcomePageView.welcomePageView()
+        let v =  recordVersion != Bundle.main.currentVersion ? SCNewFeatureView.newFeatureView() : SCWelcomePageView.welcomePageView()
         view.addSubview(v)
         UserDefaults.standard.set(Bundle.main.currentVersion, forKey: "version")
     }

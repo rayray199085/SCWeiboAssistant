@@ -42,6 +42,7 @@
 		0D4478BA226D43A20036D572 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4478B9226D43A20036D572 /* UIApplication+extension.swift */; };
 		0D4478BE226D8F080036D572 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4478BD226D8F080036D572 /* WeiboCommon.swift */; };
 		0D4478C1226D91F30036D572 /* SCOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4478C0226D91F30036D572 /* SCOAuthViewController.swift */; };
+		0D4CC407227296770096EA7B /* SCNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4CC406227296770096EA7B /* SCNewFeatureView.xib */; };
 		0D5F99462268139B003A6E65 /* SCVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F99452268139B003A6E65 /* SCVisitorView.swift */; };
 		0D71859622716CE7003C934D /* SCNavigationItemTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71859522716CE7003C934D /* SCNavigationItemTitleButton.swift */; };
 		0D71859F2271834C003C934D /* SCWelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71859E2271834C003C934D /* SCWelcomePageView.swift */; };
@@ -123,6 +124,7 @@
 		0D4478B9226D43A20036D572 /* UIApplication+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extension.swift"; sourceTree = "<group>"; };
 		0D4478BD226D8F080036D572 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		0D4478C0226D91F30036D572 /* SCOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCOAuthViewController.swift; sourceTree = "<group>"; };
+		0D4CC406227296770096EA7B /* SCNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCNewFeatureView.xib; sourceTree = "<group>"; };
 		0D5F99452268139B003A6E65 /* SCVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCVisitorView.swift; sourceTree = "<group>"; };
 		0D71859522716CE7003C934D /* SCNavigationItemTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNavigationItemTitleButton.swift; sourceTree = "<group>"; };
 		0D71859E2271834C003C934D /* SCWelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCWelcomePageView.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				0D71859E2271834C003C934D /* SCWelcomePageView.swift */,
 				0D7185A0227183B9003C934D /* SCNewFeatureView.swift */,
 				0D7185A2227197F0003C934D /* SCWelcomePageView.xib */,
+				0D4CC406227296770096EA7B /* SCNewFeatureView.xib */,
 			);
 			path = SplashView;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4CC407227296770096EA7B /* SCNewFeatureView.xib in Resources */,
 				0D0E2CFA226999DE00256D39 /* main.json in Resources */,
 				0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */,
 				0D7185A3227197F0003C934D /* SCWelcomePageView.xib in Resources */,
