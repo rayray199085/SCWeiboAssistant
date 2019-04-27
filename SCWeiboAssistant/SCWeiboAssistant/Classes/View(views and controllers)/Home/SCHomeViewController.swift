@@ -35,7 +35,10 @@ extension SCHomeViewController{
             highlightedImageName: "navigationbar_friendsearch_highlighted",
             target: self,
             action: #selector(clickFriendButton))
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView?.register(UINib(nibName: "SCStatusTableViewNormalCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+        tableView?.rowHeight = UITableView.automaticDimension
+        tableView?.estimatedRowHeight = 300
+        tableView?.separatorStyle = UITableViewCell.SeparatorStyle.none
         setupNavigationItemTitle()
     }
     
@@ -50,8 +53,9 @@ extension SCHomeViewController{
         return statusListViewModel.statusList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = statusListViewModel.statusList[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SCStatusTableViewCell
+        cell.detailsLabel.text = statusListViewModel.statusList[indexPath.row].status.text
+//        cell.textLabel!.text = statusListViewModel.statusList[indexPath.row].text
         return cell
     }
 }

@@ -11,6 +11,7 @@ import YYModel
 class SCStatus: NSObject {
     @objc var id: Int64 = 0
     @objc var text: String?
+    @objc var user: SCUser?
     override var description: String{
         return yy_modelDescription()
     }
