@@ -54,8 +54,7 @@ extension SCHomeViewController{
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SCStatusTableViewCell
-        cell.detailsLabel.text = statusListViewModel.statusList[indexPath.row].status.text
-//        cell.textLabel!.text = statusListViewModel.statusList[indexPath.row].text
+        cell.statusViewModel = statusListViewModel.statusList[indexPath.row]
         return cell
     }
 }
