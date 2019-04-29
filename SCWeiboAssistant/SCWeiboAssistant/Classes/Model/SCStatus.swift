@@ -15,7 +15,12 @@ class SCStatus: NSObject {
     @objc var reposts_count: Int = 0
     @objc var comments_count: Int = 0
     @objc var attitudes_count: Int = 0
+    @objc var pic_urls: [SCStatusPicture]?
+    
     override var description: String{
         return yy_modelDescription()
+    }
+    @objc class func modelContainerPropertyGenericClass()->[String:AnyClass]{
+        return ["pic_urls": SCStatusPicture.self]
     }
 }

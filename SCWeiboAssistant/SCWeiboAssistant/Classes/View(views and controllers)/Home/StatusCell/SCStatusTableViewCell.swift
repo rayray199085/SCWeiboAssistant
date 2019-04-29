@@ -21,6 +21,8 @@ class SCStatusTableViewCell: UITableViewCell {
                 placeholderImage:UIImage(named: "avatar_default_big"),
                 isAvatar: true)
             toolBarView.statusViewModel = statusViewModel
+            pictureView.heightCons.constant = statusViewModel?.pictureViewSize.height ?? 0
+            pictureView.picUrls = statusViewModel?.status.pic_urls
         }
     }
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -30,7 +32,8 @@ class SCStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var postTimeLabel: UILabel!
     @IBOutlet weak var vipImageView: UIImageView!
     @IBOutlet weak var detailsLabel: UILabel!
-    @IBOutlet weak var toolBarView: SCCellToolBarView!
+    @IBOutlet weak var pictureView: SCStatusPictureView!
+    @IBOutlet weak var toolBarView: SCStatusToolBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()

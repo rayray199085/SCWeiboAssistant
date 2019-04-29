@@ -1,5 +1,5 @@
 //
-//  SCCellToolBarView.swift
+//  SCStatusToolBar.swift
 //  SCWeiboAssistant
 //
 //  Created by Stephen Cao on 28/4/19.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SCCellToolBarView: UIView {
+class SCStatusToolBar: UIView {
     var statusViewModel: SCStatusViewModel?{
         didSet{
-            let repostCount = statusViewModel?.repostCount ?? 0
-            repostButton.setTitle("\(repostCount)", for: [])
+           repostButton.setTitle(statusViewModel?.repostCount, for: [])
+           commentButton.setTitle(statusViewModel?.commentCount, for: [])
+           likeButton.setTitle(statusViewModel?.likeCount, for: [])
         }
     }
     @IBOutlet weak var repostButton: UIButton!

@@ -14,7 +14,10 @@ class SCStatusViewModel: CustomStringConvertible{
     
     var membershipImage: UIImage?
     var vipImage: UIImage?
-    var repostCount: Int = 0
+    var repostCount: String?
+    var commentCount: String?
+    var likeCount: String?
+    var pictureViewSize = CGSize()
     
     init(model: SCStatus) {
         status = model
@@ -32,7 +35,22 @@ class SCStatusViewModel: CustomStringConvertible{
             default:
                 break
         }
-        repostCount = status.reposts_count
+        repostCount = String.transformDigitsToString(count: status.reposts_count, defaultString: "repost")
+        commentCount = String.transformDigitsToString(count: status.comments_count, defaultString: "comment")
+        likeCount = String.transformDigitsToString(count: status.attitudes_count, defaultString: "like")
+        pictureViewSize = calculatePictureViewSize(count: status.pic_urls?.count)
+    }
+    
+    private func calculatePictureViewSize(count: Int?)->CGSize{
+        guard let count = count else{
+            return CGSize(width: SCStatusPictureViewWidth, height: 0)
+        }
+        if count == 0{
+            return CGSize(width: SCStatusPictureViewWidth, height: 0)
+        }
+        let row = CGFloat((count - 1) / 3 + 1)
+        let height = SCStatusPictureViewOutterMargin + SCStatusPictureImageWidth * row + SCStatusPictureViewInnerMargin * (row - 1)
+        return CGSize(width: SCStatusPictureViewWidth, height: height)
     }
     var description: String{
         return status.description

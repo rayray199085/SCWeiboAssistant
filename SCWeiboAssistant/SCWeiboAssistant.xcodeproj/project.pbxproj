@@ -15,6 +15,7 @@
 		0D0E2CFA226999DE00256D39 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D0E2CF9226999DD00256D39 /* main.json */; };
 		0D347D232273DCDB001F218F /* SCStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D347D222273DCDB001F218F /* SCStatusTableViewCell.swift */; };
 		0D347D252273DD22001F218F /* SCStatusTableViewNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D347D242273DD22001F218F /* SCStatusTableViewNormalCell.xib */; };
+		0D3F0170227674D500E504E8 /* SCStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F016F227674D500E504E8 /* SCStatusPictureView.swift */; };
 		0D43253F22645EC300FBAC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43253E22645EC300FBAC1B /* AppDelegate.swift */; };
 		0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D43254522645EC400FBAC1B /* Assets.xcassets */; };
 		0D43255422645EC400FBAC1B /* SCWeiboAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43255322645EC400FBAC1B /* SCWeiboAssistantTests.swift */; };
@@ -52,9 +53,11 @@
 		0D7185A3227197F0003C934D /* SCWelcomePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7185A2227197F0003C934D /* SCWelcomePageView.xib */; };
 		0D7D3581226E942900533698 /* WKWebView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D3580226E942900533698 /* WKWebView+extension.swift */; };
 		0D7D358A226EEBD300533698 /* SCUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D3589226EEBD300533698 /* SCUserAccount.swift */; };
+		0DC3743C2276810F002DD480 /* SCStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC3743B2276810F002DD480 /* SCStatusPicture.swift */; };
+		0DC374422276D781002DD480 /* SCStatusTableViewRepostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DC374412276D781002DD480 /* SCStatusTableViewRepostCell.xib */; };
 		0DDAF2E6227436A800323C0B /* SCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAF2E5227436A800323C0B /* SCUser.swift */; };
 		0DDAF2E822743D2D00323C0B /* SCStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAF2E722743D2D00323C0B /* SCStatusViewModel.swift */; };
-		0DDB573922759AA1008B47AC /* SCCellToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB573822759AA1008B47AC /* SCCellToolBarView.swift */; };
+		0DDB573922759AA1008B47AC /* SCStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB573822759AA1008B47AC /* SCStatusToolBar.swift */; };
 		0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */; };
 		0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */; };
 		0DDD256B226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */; };
@@ -87,6 +90,7 @@
 		0D0E2CF9226999DD00256D39 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		0D347D222273DCDB001F218F /* SCStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusTableViewCell.swift; sourceTree = "<group>"; };
 		0D347D242273DD22001F218F /* SCStatusTableViewNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCStatusTableViewNormalCell.xib; sourceTree = "<group>"; };
+		0D3F016F227674D500E504E8 /* SCStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusPictureView.swift; sourceTree = "<group>"; };
 		0D43253B22645EC300FBAC1B /* SCWeiboAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCWeiboAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D43253E22645EC300FBAC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D43254522645EC400FBAC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,9 +143,11 @@
 		0D7185A2227197F0003C934D /* SCWelcomePageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCWelcomePageView.xib; sourceTree = "<group>"; };
 		0D7D3580226E942900533698 /* WKWebView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+extension.swift"; sourceTree = "<group>"; };
 		0D7D3589226EEBD300533698 /* SCUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCUserAccount.swift; sourceTree = "<group>"; };
+		0DC3743B2276810F002DD480 /* SCStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusPicture.swift; sourceTree = "<group>"; };
+		0DC374412276D781002DD480 /* SCStatusTableViewRepostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCStatusTableViewRepostCell.xib; sourceTree = "<group>"; };
 		0DDAF2E5227436A800323C0B /* SCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCUser.swift; sourceTree = "<group>"; };
 		0DDAF2E722743D2D00323C0B /* SCStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusViewModel.swift; sourceTree = "<group>"; };
-		0DDB573822759AA1008B47AC /* SCCellToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCellToolBarView.swift; sourceTree = "<group>"; };
+		0DDB573822759AA1008B47AC /* SCStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusToolBar.swift; sourceTree = "<group>"; };
 		0DDD256222653DB6006BE6EE /* UIWindow+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+extension.swift"; sourceTree = "<group>"; };
 		0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDemoViewController.swift; sourceTree = "<group>"; };
 		0DDD2569226592DE006BE6EE /* UIScreen+SCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SCAddition.h"; sourceTree = "<group>"; };
@@ -207,8 +213,10 @@
 			isa = PBXGroup;
 			children = (
 				0D347D222273DCDB001F218F /* SCStatusTableViewCell.swift */,
+				0D3F016F227674D500E504E8 /* SCStatusPictureView.swift */,
+				0DDB573822759AA1008B47AC /* SCStatusToolBar.swift */,
 				0D347D242273DD22001F218F /* SCStatusTableViewNormalCell.xib */,
-				0DDB573822759AA1008B47AC /* SCCellToolBarView.swift */,
+				0DC374412276D781002DD480 /* SCStatusTableViewRepostCell.xib */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -240,10 +248,10 @@
 			children = (
 				0D43256C22646DE700FBAC1B /* Classes */,
 				0D43253E22645EC300FBAC1B /* AppDelegate.swift */,
+				0D4478BD226D8F080036D572 /* WeiboCommon.swift */,
 				0D4325AE226471C000FBAC1B /* Weibo-Bridge.h */,
 				0D43254522645EC400FBAC1B /* Assets.xcassets */,
 				0D43254A22645EC400FBAC1B /* Info.plist */,
-				0D4478BD226D8F080036D572 /* WeiboCommon.swift */,
 			);
 			path = SCWeiboAssistant;
 			sourceTree = "<group>";
@@ -350,6 +358,7 @@
 			children = (
 				0D0004CE226B044F00BB073D /* SCStatus.swift */,
 				0DDAF2E5227436A800323C0B /* SCUser.swift */,
+				0DC3743B2276810F002DD480 /* SCStatusPicture.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -592,6 +601,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DC374422276D781002DD480 /* SCStatusTableViewRepostCell.xib in Resources */,
 				0D4CC407227296770096EA7B /* SCNewFeatureView.xib in Resources */,
 				0D0E2CFA226999DE00256D39 /* main.json in Resources */,
 				0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */,
@@ -708,13 +718,15 @@
 				0D4325A62264713C00FBAC1B /* Date+extension.swift in Sources */,
 				0D43258122646F7600FBAC1B /* SCDiscoverViewController.swift in Sources */,
 				0D4325A52264713C00FBAC1B /* UIImageView+extension.swift in Sources */,
+				0D3F0170227674D500E504E8 /* SCStatusPictureView.swift in Sources */,
 				0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */,
 				0D4478C1226D91F30036D572 /* SCOAuthViewController.swift in Sources */,
-				0DDB573922759AA1008B47AC /* SCCellToolBarView.swift in Sources */,
+				0DDB573922759AA1008B47AC /* SCStatusToolBar.swift in Sources */,
 				0DDAF2E822743D2D00323C0B /* SCStatusViewModel.swift in Sources */,
 				0D347D232273DCDB001F218F /* SCStatusTableViewCell.swift in Sources */,
 				0D43259F2264713C00FBAC1B /* CABasicAnimation+SCAddition.m in Sources */,
 				0DDD256322653DB6006BE6EE /* UIWindow+extension.swift in Sources */,
+				0DC3743C2276810F002DD480 /* SCStatusPicture.swift in Sources */,
 				0D000452226AAAE400BB073D /* FFLabel.swift in Sources */,
 				0D5F99462268139B003A6E65 /* SCVisitorView.swift in Sources */,
 				0DE8294E226BF4CE00545341 /* SCStatusListViewModel.swift in Sources */,
