@@ -9,7 +9,13 @@
 import UIKit
 
 class SCStatusPicture: NSObject {
-    @objc var thumbnail_pic: String?
+    @objc var thumbnail_pic: String?{
+        didSet{
+            let pic = thumbnail_pic ?? ""
+            large_pic = (pic as NSString).replacingOccurrences(of: "thumbnail", with: "large")
+        }
+    }
+    @objc var large_pic: String?
     
     override var description: String{
         return yy_modelDescription()

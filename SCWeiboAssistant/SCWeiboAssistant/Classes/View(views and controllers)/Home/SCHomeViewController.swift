@@ -9,7 +9,8 @@
 import UIKit
 import Alamofire
 
-private let reuseIdentifier = "status_cell"
+private let originalReuseIdentifier = "original_status_cell"
+private let repostReuseIdentifier = "repost_status_cell"
 class SCHomeViewController: SCBaseViewController {
     private lazy var statusListViewModel = SCStatusListViewModel()
     
@@ -35,7 +36,8 @@ extension SCHomeViewController{
             highlightedImageName: "navigationbar_friendsearch_highlighted",
             target: self,
             action: #selector(clickFriendButton))
-        tableView?.register(UINib(nibName: "SCStatusTableViewNormalCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+        tableView?.register(UINib(nibName: "SCStatusTableViewNormalCell", bundle: nil), forCellReuseIdentifier: originalReuseIdentifier)
+        tableView?.register(UINib(nibName: "SCStatusTableViewRepostCell", bundle: nil), forCellReuseIdentifier: repostReuseIdentifier)
         tableView?.rowHeight = UITableView.automaticDimension
         tableView?.estimatedRowHeight = 300
         tableView?.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -53,8 +55,9 @@ extension SCHomeViewController{
         return statusListViewModel.statusList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SCStatusTableViewCell
-        cell.statusViewModel = statusListViewModel.statusList[indexPath.row]
+        let statusViewModel = statusListViewModel.statusList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: statusViewModel.status.retweeted_status != nil ? repostReuseIdentifier : originalReuseIdentifier, for: indexPath) as! SCStatusTableViewCell
+        cell.statusViewModel = statusViewModel
         return cell
     }
 }

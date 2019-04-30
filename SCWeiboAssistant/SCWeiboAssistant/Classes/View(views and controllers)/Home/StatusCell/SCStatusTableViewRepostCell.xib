@@ -56,7 +56,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_enterprise_vip_lv1" translatesAutoresizingMaskIntoConstraints="NO" id="45e-S8-yel" userLabel="vip">
                         <rect key="frame" x="35" y="47" width="14" height="14"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Re-W0-cWH" userLabel="details">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Re-W0-cWH" userLabel="details">
                         <rect key="frame" x="12" y="70" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,7 +66,7 @@
                         <rect key="frame" x="0.0" y="100" width="414" height="281.5"/>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbc-6d-9Cy" userLabel="repostDetails">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbc-6d-9Cy" userLabel="repostDetails">
                         <rect key="frame" x="12" y="112" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,6 +175,7 @@
                 <outlet property="membershipImageView" destination="1ig-IE-3TY" id="GiK-rC-HkX"/>
                 <outlet property="pictureView" destination="b4F-a9-Frx" id="lDL-0a-ptU"/>
                 <outlet property="postTimeLabel" destination="JsB-po-dMR" id="xCq-f2-nzK"/>
+                <outlet property="repostDetailsLabel" destination="Qbc-6d-9Cy" id="Wy4-s8-mI5"/>
                 <outlet property="screenNameLabel" destination="sc2-Gy-1rH" id="STM-yC-qTw"/>
                 <outlet property="sourceLabel" destination="ctM-pV-h1I" id="Hv4-dc-RjU"/>
                 <outlet property="toolBarView" destination="xIv-Mp-AnG" id="rOh-UP-N0r"/>

@@ -9,6 +9,31 @@
 import UIKit
 
 class SCStatusPictureView: UIView {
+    var statusViewModel: SCStatusViewModel?{
+        didSet{
+            picUrls = statusViewModel?.picUrls
+            adjustViewSize()
+        }
+    }
+    
+    private func adjustViewSize(){
+        heightCons.constant = statusViewModel?.pictureViewSize.height ?? 0
+        let v = subviews[0]
+        if statusViewModel?.picUrls?.count == 1{
+            v.frame = CGRect(
+                x: 0,
+                y: SCStatusPictureViewOutterMargin,
+                width: statusViewModel?.pictureViewSize.width ?? SCStatusPictureImageWidth,
+                height: statusViewModel?.pictureViewSize.height ?? SCStatusPictureImageWidth - SCStatusPictureViewOutterMargin)
+        }else{
+            v.frame = CGRect(
+                x: 0,
+                y: SCStatusPictureViewOutterMargin,
+                width: SCStatusPictureImageWidth,
+                height: SCStatusPictureImageWidth)
+        }
+    }
+    
     var picUrls: [SCStatusPicture]?{
         didSet{
             guard let pictures = picUrls else{
@@ -24,7 +49,7 @@ class SCStatusPictureView: UIView {
                 }
                 let iv = subviews[index] as! UIImageView
                 iv.setImage(
-                    urlString: pic.thumbnail_pic,
+                    urlString: pic.large_pic,
                     backgroundColor: UIColor.white,
                     placeholderImage: UIImage(named: "empty_picture"),
                     isAvatar: false)

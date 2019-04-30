@@ -12,6 +12,7 @@ class SCStatusTableViewCell: UITableViewCell {
     var statusViewModel: SCStatusViewModel?{
         didSet{
             detailsLabel.text = statusViewModel?.status.text
+            repostDetailsLabel?.text = statusViewModel?.repostDetails
             screenNameLabel.text = statusViewModel?.status.user?.screen_name
             membershipImageView.image = statusViewModel?.membershipImage
             vipImageView.image = statusViewModel?.vipImage
@@ -21,8 +22,9 @@ class SCStatusTableViewCell: UITableViewCell {
                 placeholderImage:UIImage(named: "avatar_default_big"),
                 isAvatar: true)
             toolBarView.statusViewModel = statusViewModel
-            pictureView.heightCons.constant = statusViewModel?.pictureViewSize.height ?? 0
-            pictureView.picUrls = statusViewModel?.status.pic_urls
+            pictureView.statusViewModel = statusViewModel
+//            pictureView.heightCons.constant = statusViewModel?.pictureViewSize.height ?? 0
+//            pictureView.picUrls = statusViewModel?.picUrls
         }
     }
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -34,6 +36,7 @@ class SCStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var pictureView: SCStatusPictureView!
     @IBOutlet weak var toolBarView: SCStatusToolBar!
+    @IBOutlet weak var repostDetailsLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

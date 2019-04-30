@@ -18,6 +18,12 @@ class SCStatusViewModel: CustomStringConvertible{
     var commentCount: String?
     var likeCount: String?
     var pictureViewSize = CGSize()
+    var picUrls: [SCStatusPicture]?{
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
+    var repostDetails: String{
+        return "@\(status.retweeted_status?.user?.screen_name ?? ""):\(status.retweeted_status?.text ?? "")"
+    }
     
     init(model: SCStatus) {
         status = model
@@ -38,7 +44,24 @@ class SCStatusViewModel: CustomStringConvertible{
         repostCount = String.transformDigitsToString(count: status.reposts_count, defaultString: "repost")
         commentCount = String.transformDigitsToString(count: status.comments_count, defaultString: "comment")
         likeCount = String.transformDigitsToString(count: status.attitudes_count, defaultString: "like")
-        pictureViewSize = calculatePictureViewSize(count: status.pic_urls?.count)
+        pictureViewSize = calculatePictureViewSize(count: picUrls?.count)
+    }
+    
+    func updatePictureViewWithSingleImage(image: UIImage?){
+        guard let image = image else{
+            return
+        }
+        var size = image.size
+        if size.width > 300{
+            let ratio: CGFloat = 200 / size.width
+            size = CGSize(width: size.width * ratio, height: size.height * ratio)
+        }
+        if size.height > 300{
+            let ratio: CGFloat = 300 / size.height
+            size = CGSize(width: size.width * ratio, height: size.height * ratio)
+        }
+        size.height += SCStatusPictureViewOutterMargin
+        pictureViewSize = size
     }
     
     private func calculatePictureViewSize(count: Int?)->CGSize{

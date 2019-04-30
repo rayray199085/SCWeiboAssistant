@@ -8,11 +8,13 @@
 
 import Foundation
 import YYModel
+import SVProgressHUD
 
 private let maxPullUpErrorCount = 3
 class SCStatusListViewModel{
     private lazy var pullUpErrorCount:Int = 0
     lazy var statusList = [SCStatusViewModel]()
+    
     func loadStatus(isPullUp: Bool, completion:@escaping (_ isSuccess: Bool, _ shouldRefresh: Bool)->()){
         if isPullUp && pullUpErrorCount > maxPullUpErrorCount{
             completion(true, false)
@@ -42,7 +44,29 @@ class SCStatusListViewModel{
             }else{
                 self.statusList = statusViewModels + self.statusList
             }
-            completion(isSuccess,true)
+            self.cacheSingleImage(statusViewModels: statusViewModels,completion: completion)
+        }
+    }
+    private func cacheSingleImage(statusViewModels: [SCStatusViewModel],completion:@escaping (_ isSuccess: Bool, _ shouldRefresh: Bool)->()){
+        SVProgressHUD.show()
+        let group = DispatchGroup()
+        for model in statusViewModels{
+            if model.picUrls?.count != 1{
+                continue
+            }
+            guard let singlePicUrlString = model.picUrls?[0].large_pic,
+                  let url = URL(string: singlePicUrlString) else{
+                    continue
+            }
+            group.enter()
+            UIImage.downloadImage(url: url) { (image) in
+                model.updatePictureViewWithSingleImage(image: image)
+                group.leave()
+            }
+        }
+        group.notify(queue: DispatchQueue.main) {
+            completion(true,true)
+            SVProgressHUD.dismiss()
         }
     }
 }

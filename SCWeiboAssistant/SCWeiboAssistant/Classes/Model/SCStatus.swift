@@ -16,6 +16,7 @@ class SCStatus: NSObject {
     @objc var comments_count: Int = 0
     @objc var attitudes_count: Int = 0
     @objc var pic_urls: [SCStatusPicture]?
+    @objc var retweeted_status: SCStatus?
     
     override var description: String{
         return yy_modelDescription()
