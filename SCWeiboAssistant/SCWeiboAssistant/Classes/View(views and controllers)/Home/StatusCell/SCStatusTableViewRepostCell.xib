@@ -63,7 +63,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dm-vt-qNH" userLabel="repostViewButton">
-                        <rect key="frame" x="0.0" y="100" width="414" height="281.5"/>
+                        <rect key="frame" x="0.0" y="100" width="414" height="241"/>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbc-6d-9Cy" userLabel="repostDetails">
@@ -73,7 +73,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIv-Mp-AnG" userLabel="ToolBar" customClass="SCStatusToolBar" customModule="SCWeiboAssistant" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="381.5" width="414" height="35"/>
+                        <rect key="frame" x="0.0" y="341" width="414" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxs-Qh-zc2">
                                 <rect key="frame" x="0.0" y="0.0" width="138" height="35"/>
@@ -148,10 +148,9 @@
                     <constraint firstItem="ctM-pV-h1I" firstAttribute="leading" secondItem="JsB-po-dMR" secondAttribute="trailing" constant="6" id="T7U-rD-R1g"/>
                     <constraint firstItem="wBC-tv-zOv" firstAttribute="leading" secondItem="eso-ar-jN0" secondAttribute="leading" id="Utj-QV-lDL"/>
                     <constraint firstItem="1ig-IE-3TY" firstAttribute="centerY" secondItem="sc2-Gy-1rH" secondAttribute="centerY" id="VN2-T5-Z4h"/>
-                    <constraint firstItem="xIv-Mp-AnG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="b4F-a9-Frx" secondAttribute="bottom" constant="12" id="Wt0-y8-AeV"/>
+                    <constraint firstItem="xIv-Mp-AnG" firstAttribute="top" secondItem="b4F-a9-Frx" secondAttribute="bottom" constant="12" id="Wt0-y8-AeV"/>
                     <constraint firstItem="6Re-W0-cWH" firstAttribute="top" secondItem="hHK-By-3Yh" secondAttribute="bottom" constant="12" id="XdP-B4-P6v"/>
                     <constraint firstItem="Qbc-6d-9Cy" firstAttribute="top" secondItem="6Dm-vt-qNH" secondAttribute="top" constant="12" id="Yqt-wa-G3Y"/>
-                    <constraint firstAttribute="bottom" secondItem="xIv-Mp-AnG" secondAttribute="bottom" id="ZEr-Lw-KT7"/>
                     <constraint firstItem="Qbc-6d-9Cy" firstAttribute="leading" secondItem="6Dm-vt-qNH" secondAttribute="leading" constant="12" id="beo-7A-3nk"/>
                     <constraint firstAttribute="trailing" secondItem="wBC-tv-zOv" secondAttribute="trailing" id="du2-5M-M4o"/>
                     <constraint firstItem="xIv-Mp-AnG" firstAttribute="top" secondItem="6Dm-vt-qNH" secondAttribute="bottom" id="e2h-Yd-lgn"/>

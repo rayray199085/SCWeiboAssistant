@@ -23,8 +23,6 @@ class SCStatusTableViewCell: UITableViewCell {
                 isAvatar: true)
             toolBarView.statusViewModel = statusViewModel
             pictureView.statusViewModel = statusViewModel
-//            pictureView.heightCons.constant = statusViewModel?.pictureViewSize.height ?? 0
-//            pictureView.picUrls = statusViewModel?.picUrls
         }
     }
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -41,5 +39,6 @@ class SCStatusTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        improvePerformance()
     }
 }

@@ -62,6 +62,7 @@
 		0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */; };
 		0DDD256B226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */; };
 		0DE8294E226BF4CE00545341 /* SCStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8294D226BF4CE00545341 /* SCStatusListViewModel.swift */; };
+		0DFB4FB82279655C00A3AF63 /* UITableViewCell+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB4FB72279655C00A3AF63 /* UITableViewCell+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		0DDD2569226592DE006BE6EE /* UIScreen+SCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SCAddition.h"; sourceTree = "<group>"; };
 		0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+UISCreen_extenshion.m"; sourceTree = "<group>"; };
 		0DE8294D226BF4CE00545341 /* SCStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusListViewModel.swift; sourceTree = "<group>"; };
+		0DFB4FB72279655C00A3AF63 /* UITableViewCell+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+extension.swift"; sourceTree = "<group>"; };
 		5BE6C868617C149D9B8DDC59 /* Pods_SCWeiboAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCWeiboAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF30161588E3A756C2BC8F1 /* Pods-SCWeiboAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCWeiboAssistant.release.xcconfig"; path = "Target Support Files/Pods-SCWeiboAssistant/Pods-SCWeiboAssistant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -411,6 +413,7 @@
 				0D43259D2264713C00FBAC1B /* UIBarButtonItem+extension.swift */,
 				0D4478B9226D43A20036D572 /* UIApplication+extension.swift */,
 				0D7D3580226E942900533698 /* WKWebView+extension.swift */,
+				0DFB4FB72279655C00A3AF63 /* UITableViewCell+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				0D4478BE226D8F080036D572 /* WeiboCommon.swift in Sources */,
 				0D43257622646E8200FBAC1B /* SCMainViewController.swift in Sources */,
 				0DDAF2E6227436A800323C0B /* SCUser.swift in Sources */,
+				0DFB4FB82279655C00A3AF63 /* UITableViewCell+extension.swift in Sources */,
 				0D43258322646F8300FBAC1B /* SCProfileViewController.swift in Sources */,
 				0D4325AB2264713C00FBAC1B /* UIPageControl+extension.swift in Sources */,
 				0D43257822646EBE00FBAC1B /* SCNavigationViewController.swift in Sources */,

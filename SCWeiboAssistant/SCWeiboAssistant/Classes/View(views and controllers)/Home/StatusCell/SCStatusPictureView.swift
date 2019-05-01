@@ -11,8 +11,8 @@ import UIKit
 class SCStatusPictureView: UIView {
     var statusViewModel: SCStatusViewModel?{
         didSet{
-            picUrls = statusViewModel?.picUrls
             adjustViewSize()
+            picUrls = statusViewModel?.picUrls
         }
     }
     
@@ -34,7 +34,7 @@ class SCStatusPictureView: UIView {
         }
     }
     
-    var picUrls: [SCStatusPicture]?{
+   private var picUrls: [SCStatusPicture]?{
         didSet{
             guard let pictures = picUrls else{
                 return

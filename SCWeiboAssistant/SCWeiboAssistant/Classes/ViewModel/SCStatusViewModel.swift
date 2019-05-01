@@ -24,6 +24,7 @@ class SCStatusViewModel: CustomStringConvertible{
     var repostDetails: String{
         return "@\(status.retweeted_status?.user?.screen_name ?? ""):\(status.retweeted_status?.text ?? "")"
     }
+    var rowHeight: CGFloat = 0
     
     init(model: SCStatus) {
         status = model
@@ -45,23 +46,50 @@ class SCStatusViewModel: CustomStringConvertible{
         commentCount = String.transformDigitsToString(count: status.comments_count, defaultString: "comment")
         likeCount = String.transformDigitsToString(count: status.attitudes_count, defaultString: "like")
         pictureViewSize = calculatePictureViewSize(count: picUrls?.count)
+        updateRowHeight()
+    }
+    
+    private func updateRowHeight(){
+        let margin: CGFloat = 12
+        let avatarViewHeight: CGFloat = 34
+        let toolbarHeight: CGFloat = 35
+        var height: CGFloat = 0
+        let labelSize = CGSize(width: UIScreen.screenWidth() - 2 * margin,height: CGFloat(MAXFLOAT))
+        let detailsString = status.text ?? ""
+        let detailsFont = UIFont.systemFont(ofSize: 15)
+        let repostDetailsFont = UIFont.systemFont(ofSize: 14)
+        
+        height += 2 * margin
+        height += avatarViewHeight + margin
+        height += detailsString.getTextHeight(size: labelSize, font: detailsFont)
+        if status.retweeted_status != nil{
+            height += 2 * margin
+            height += repostDetails.getTextHeight(size: labelSize, font: repostDetailsFont)
+        }
+        height += pictureViewSize.height
+        height += margin
+        height += toolbarHeight
+        rowHeight = height
     }
     
     func updatePictureViewWithSingleImage(image: UIImage?){
         guard let image = image else{
             return
         }
+        let maxWidth: CGFloat = 200
+        let maxHeight: CGFloat = 300
         var size = image.size
         if size.width > 300{
-            let ratio: CGFloat = 200 / size.width
-            size = CGSize(width: size.width * ratio, height: size.height * ratio)
+            let ratio: CGFloat = maxWidth / size.width
+            size = CGSize(width: round(size.width * ratio), height: round(size.height * ratio))
         }
         if size.height > 300{
-            let ratio: CGFloat = 300 / size.height
-            size = CGSize(width: size.width * ratio, height: size.height * ratio)
+            let ratio: CGFloat = maxHeight / size.height
+            size = CGSize(width: round(size.width * ratio), height: round(size.height * ratio))
         }
         size.height += SCStatusPictureViewOutterMargin
         pictureViewSize = size
+        updateRowHeight()
     }
     
     private func calculatePictureViewSize(count: Int?)->CGSize{

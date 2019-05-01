@@ -38,7 +38,6 @@ extension SCHomeViewController{
             action: #selector(clickFriendButton))
         tableView?.register(UINib(nibName: "SCStatusTableViewNormalCell", bundle: nil), forCellReuseIdentifier: originalReuseIdentifier)
         tableView?.register(UINib(nibName: "SCStatusTableViewRepostCell", bundle: nil), forCellReuseIdentifier: repostReuseIdentifier)
-        tableView?.rowHeight = UITableView.automaticDimension
         tableView?.estimatedRowHeight = 300
         tableView?.separatorStyle = UITableViewCell.SeparatorStyle.none
         setupNavigationItemTitle()
@@ -59,5 +58,9 @@ extension SCHomeViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: statusViewModel.status.retweeted_status != nil ? repostReuseIdentifier : originalReuseIdentifier, for: indexPath) as! SCStatusTableViewCell
         cell.statusViewModel = statusViewModel
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let statusViewModel = statusListViewModel.statusList[indexPath.row]
+        return statusViewModel.rowHeight
     }
 }
