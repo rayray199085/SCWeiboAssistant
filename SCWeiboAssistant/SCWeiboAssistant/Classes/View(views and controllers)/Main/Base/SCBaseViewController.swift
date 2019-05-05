@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SCRRefreshControl
 
 class SCBaseViewController: UIViewController {
     var tableView: UITableView?
-    var refreshControl: UIRefreshControl?
+    var refreshControl: SCRRefreshControl?
     var isPullUp = false
     var visitorInfo : [String : String]?
     
@@ -61,7 +62,7 @@ extension SCBaseViewController{
         tableView.delegate = self
         tableView.dataSource = self
         
-        refreshControl = UIRefreshControl()
+        refreshControl = SCRRefreshControl(style: .anime)
         tableView.addSubview(refreshControl!)
         refreshControl?.addTarget(self, action: #selector(loadData), for: UIControl.Event.valueChanged)
     }

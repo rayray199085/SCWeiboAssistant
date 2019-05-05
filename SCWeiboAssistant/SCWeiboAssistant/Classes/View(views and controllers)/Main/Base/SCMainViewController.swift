@@ -49,9 +49,10 @@ class SCMainViewController: UITabBarController {
         return UIInterfaceOrientationMask.portrait
     }
     
-    // FIXME: compose button observer
     @objc private func clickComposeButton(){
-        print("click")
+        //FIXME: check whether login
+        let composeView = SCComposeTypeView.composeTypeView()
+        composeView.show()
     }
 }
 extension SCMainViewController: UITabBarControllerDelegate{

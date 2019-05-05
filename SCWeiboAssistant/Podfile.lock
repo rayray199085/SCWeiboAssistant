@@ -2,27 +2,19 @@ PODS:
   - Alamofire (4.8.1)
   - AlamofireNetworkActivityIndicator (2.3.0):
     - Alamofire (~> 4.7)
-  - FLAnimatedImage (1.0.12)
-  - HZPhotoBrowser (1.0.1):
-    - SDWebImage/GIF
   - pop (1.0.12)
-  - SCLAlertView (0.8)
+  - SCRRefreshControl (0.0.9)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
-  - SDWebImage/GIF (4.4.6):
-    - FLAnimatedImage (~> 1.0)
-    - SDWebImage/Core
   - SVProgressHUD (2.2.5)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
-  - FLAnimatedImage
-  - HZPhotoBrowser
   - pop
-  - SCLAlertView
+  - SCRRefreshControl
   - SDWebImage
   - SVProgressHUD
   - YYModel
@@ -31,10 +23,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireNetworkActivityIndicator
-    - FLAnimatedImage
-    - HZPhotoBrowser
     - pop
-    - SCLAlertView
+    - SCRRefreshControl
     - SDWebImage
     - SVProgressHUD
     - YYModel
@@ -42,14 +32,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireNetworkActivityIndicator: 18346ff6d770d9513d0ac6f2d99706f40f93dbaa
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  HZPhotoBrowser: 6ed34b8d447a82b9d535574bd24e6ee0689ebf1f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SCRRefreshControl: fe2c1114de58a4f590dc1bbfc5f6bc8273c3e3c5
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: c7fdbd8b5935d8f8d10d52eeaf8834fe5d1ab699
+PODFILE CHECKSUM: 128e944edb138d0c045fc5d234bac48011970ff5
 
 COCOAPODS: 1.6.1

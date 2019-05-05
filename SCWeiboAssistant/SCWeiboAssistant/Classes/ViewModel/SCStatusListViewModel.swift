@@ -8,7 +8,6 @@
 
 import Foundation
 import YYModel
-import SVProgressHUD
 
 private let maxPullUpErrorCount = 3
 class SCStatusListViewModel{
@@ -48,7 +47,6 @@ class SCStatusListViewModel{
         }
     }
     private func cacheSingleImage(statusViewModels: [SCStatusViewModel],completion:@escaping (_ isSuccess: Bool, _ shouldRefresh: Bool)->()){
-        SVProgressHUD.show()
         let group = DispatchGroup()
         for model in statusViewModels{
             if model.picUrls?.count != 1{
@@ -66,7 +64,6 @@ class SCStatusListViewModel{
         }
         group.notify(queue: DispatchQueue.main) {
             completion(true,true)
-            SVProgressHUD.dismiss()
         }
     }
 }

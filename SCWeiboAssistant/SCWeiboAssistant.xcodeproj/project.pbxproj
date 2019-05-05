@@ -13,6 +13,10 @@
 		0D00045B226AE1FE00BB073D /* SCNetworkManager+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00045A226AE1FE00BB073D /* SCNetworkManager+extension.swift */; };
 		0D0004CF226B044F00BB073D /* SCStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0004CE226B044F00BB073D /* SCStatus.swift */; };
 		0D0E2CFA226999DE00256D39 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D0E2CF9226999DD00256D39 /* main.json */; };
+		0D2F3FBA227E9F8800FB45B7 /* SCComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F3FB9227E9F8800FB45B7 /* SCComposeTypeView.swift */; };
+		0D2F3FBC227EA83800FB45B7 /* SCComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2F3FBB227EA83800FB45B7 /* SCComposeTypeView.xib */; };
+		0D2F3FBE227EB21700FB45B7 /* SCComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F3FBD227EB21700FB45B7 /* SCComposeTypeButton.swift */; };
+		0D2F3FC0227EB25D00FB45B7 /* SCComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2F3FBF227EB25D00FB45B7 /* SCComposeTypeButton.xib */; };
 		0D347D232273DCDB001F218F /* SCStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D347D222273DCDB001F218F /* SCStatusTableViewCell.swift */; };
 		0D347D252273DD22001F218F /* SCStatusTableViewNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D347D242273DD22001F218F /* SCStatusTableViewNormalCell.xib */; };
 		0D3F0170227674D500E504E8 /* SCStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F016F227674D500E504E8 /* SCStatusPictureView.swift */; };
@@ -89,6 +93,10 @@
 		0D00045A226AE1FE00BB073D /* SCNetworkManager+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNetworkManager+extension.swift"; sourceTree = "<group>"; };
 		0D0004CE226B044F00BB073D /* SCStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatus.swift; sourceTree = "<group>"; };
 		0D0E2CF9226999DD00256D39 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		0D2F3FB9227E9F8800FB45B7 /* SCComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCComposeTypeView.swift; sourceTree = "<group>"; };
+		0D2F3FBB227EA83800FB45B7 /* SCComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCComposeTypeView.xib; sourceTree = "<group>"; };
+		0D2F3FBD227EB21700FB45B7 /* SCComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCComposeTypeButton.swift; sourceTree = "<group>"; };
+		0D2F3FBF227EB25D00FB45B7 /* SCComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCComposeTypeButton.xib; sourceTree = "<group>"; };
 		0D347D222273DCDB001F218F /* SCStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusTableViewCell.swift; sourceTree = "<group>"; };
 		0D347D242273DD22001F218F /* SCStatusTableViewNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCStatusTableViewNormalCell.xib; sourceTree = "<group>"; };
 		0D3F016F227674D500E504E8 /* SCStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusPictureView.swift; sourceTree = "<group>"; };
@@ -211,6 +219,25 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		0D2F3FB7227E9F2300FB45B7 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				0D2F3FB8227E9F4600FB45B7 /* ComposeType */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		0D2F3FB8227E9F4600FB45B7 /* ComposeType */ = {
+			isa = PBXGroup;
+			children = (
+				0D2F3FB9227E9F8800FB45B7 /* SCComposeTypeView.swift */,
+				0D2F3FBB227EA83800FB45B7 /* SCComposeTypeView.xib */,
+				0D2F3FBD227EB21700FB45B7 /* SCComposeTypeButton.swift */,
+				0D2F3FBF227EB25D00FB45B7 /* SCComposeTypeButton.xib */,
+			);
+			path = ComposeType;
+			sourceTree = "<group>";
+		};
 		0D347D212273DCBD001F218F /* StatusCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +342,7 @@
 				0D43257122646DE700FBAC1B /* Message */,
 				0D43257022646DE700FBAC1B /* Discover */,
 				0D43257222646DE700FBAC1B /* Profile */,
+				0D2F3FB7227E9F2300FB45B7 /* Compose */,
 			);
 			path = "View(views and controllers)";
 			sourceTree = "<group>";
@@ -606,8 +634,10 @@
 			files = (
 				0DC374422276D781002DD480 /* SCStatusTableViewRepostCell.xib in Resources */,
 				0D4CC407227296770096EA7B /* SCNewFeatureView.xib in Resources */,
+				0D2F3FC0227EB25D00FB45B7 /* SCComposeTypeButton.xib in Resources */,
 				0D0E2CFA226999DE00256D39 /* main.json in Resources */,
 				0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */,
+				0D2F3FBC227EA83800FB45B7 /* SCComposeTypeView.xib in Resources */,
 				0D7185A3227197F0003C934D /* SCWelcomePageView.xib in Resources */,
 				0D347D252273DD22001F218F /* SCStatusTableViewNormalCell.xib in Resources */,
 			);
@@ -663,9 +693,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SCWeiboAssistant/Pods-SCWeiboAssistant-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
-				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
-				"${BUILT_PRODUCTS_DIR}/HZPhotoBrowser/HZPhotoBrowser.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SCRRefreshControl/SCRRefreshControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
@@ -677,9 +705,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HZPhotoBrowser.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCRRefreshControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
@@ -711,6 +737,7 @@
 				0D4325A42264713C00FBAC1B /* UILabel+SCAddition.m in Sources */,
 				0D71859F2271834C003C934D /* SCWelcomePageView.swift in Sources */,
 				0D4325AA2264713C00FBAC1B /* String+extension.swift in Sources */,
+				0D2F3FBE227EB21700FB45B7 /* SCComposeTypeButton.swift in Sources */,
 				0D43253F22645EC300FBAC1B /* AppDelegate.swift in Sources */,
 				0D43257D22646F5200FBAC1B /* SCHomeViewController.swift in Sources */,
 				0D43259E2264713C00FBAC1B /* UIColor+SCAddition.m in Sources */,
@@ -724,6 +751,7 @@
 				0D3F0170227674D500E504E8 /* SCStatusPictureView.swift in Sources */,
 				0D4325AD2264713C00FBAC1B /* UIBarButtonItem+extension.swift in Sources */,
 				0D4478C1226D91F30036D572 /* SCOAuthViewController.swift in Sources */,
+				0D2F3FBA227E9F8800FB45B7 /* SCComposeTypeView.swift in Sources */,
 				0DDB573922759AA1008B47AC /* SCStatusToolBar.swift in Sources */,
 				0DDAF2E822743D2D00323C0B /* SCStatusViewModel.swift in Sources */,
 				0D347D232273DCDB001F218F /* SCStatusTableViewCell.swift in Sources */,

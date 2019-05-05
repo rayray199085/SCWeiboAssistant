@@ -18,6 +18,7 @@ class SCHomeViewController: SCBaseViewController {
         navigationController?.pushViewController(SCDemoViewController(), animated: true)
     }
     override func loadData() {
+        refreshControl?.beginRefreshing()
         statusListViewModel.loadStatus(isPullUp: isPullUp) { (isSucces, shouldRefresh) in
             shouldRefresh ? self.tableView?.reloadData() : ()
             self.refreshControl?.endRefreshing()
