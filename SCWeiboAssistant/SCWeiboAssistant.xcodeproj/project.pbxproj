@@ -19,6 +19,8 @@
 		0D2F3FC0227EB25D00FB45B7 /* SCComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2F3FBF227EB25D00FB45B7 /* SCComposeTypeButton.xib */; };
 		0D347D232273DCDB001F218F /* SCStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D347D222273DCDB001F218F /* SCStatusTableViewCell.swift */; };
 		0D347D252273DD22001F218F /* SCStatusTableViewNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D347D242273DD22001F218F /* SCStatusTableViewNormalCell.xib */; };
+		0D36522C227FFE0700C2ECC6 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36522B227FFE0700C2ECC6 /* UIView+extension.swift */; };
+		0D36522E22801DC900C2ECC6 /* SCComposeIdeaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36522D22801DC900C2ECC6 /* SCComposeIdeaController.swift */; };
 		0D3F0170227674D500E504E8 /* SCStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F016F227674D500E504E8 /* SCStatusPictureView.swift */; };
 		0D43253F22645EC300FBAC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43253E22645EC300FBAC1B /* AppDelegate.swift */; };
 		0D43254622645EC400FBAC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D43254522645EC400FBAC1B /* Assets.xcassets */; };
@@ -99,6 +101,8 @@
 		0D2F3FBF227EB25D00FB45B7 /* SCComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCComposeTypeButton.xib; sourceTree = "<group>"; };
 		0D347D222273DCDB001F218F /* SCStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusTableViewCell.swift; sourceTree = "<group>"; };
 		0D347D242273DD22001F218F /* SCStatusTableViewNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCStatusTableViewNormalCell.xib; sourceTree = "<group>"; };
+		0D36522B227FFE0700C2ECC6 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		0D36522D22801DC900C2ECC6 /* SCComposeIdeaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCComposeIdeaController.swift; sourceTree = "<group>"; };
 		0D3F016F227674D500E504E8 /* SCStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusPictureView.swift; sourceTree = "<group>"; };
 		0D43253B22645EC300FBAC1B /* SCWeiboAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCWeiboAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D43253E22645EC300FBAC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				0D2F3FB8227E9F4600FB45B7 /* ComposeType */,
+				0D36522D22801DC900C2ECC6 /* SCComposeIdeaController.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				0D4478B9226D43A20036D572 /* UIApplication+extension.swift */,
 				0D7D3580226E942900533698 /* WKWebView+extension.swift */,
 				0DFB4FB72279655C00A3AF63 /* UITableViewCell+extension.swift */,
+				0D36522B227FFE0700C2ECC6 /* UIView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -733,6 +739,7 @@
 				0D4325A22264713C00FBAC1B /* NSObject+SCAddition.m in Sources */,
 				0D71859622716CE7003C934D /* SCNavigationItemTitleButton.swift in Sources */,
 				0D00045B226AE1FE00BB073D /* SCNetworkManager+extension.swift in Sources */,
+				0D36522C227FFE0700C2ECC6 /* UIView+extension.swift in Sources */,
 				0D4325A92264713C00FBAC1B /* Bundle+extension.swift in Sources */,
 				0D4325A42264713C00FBAC1B /* UILabel+SCAddition.m in Sources */,
 				0D71859F2271834C003C934D /* SCWelcomePageView.swift in Sources */,
@@ -743,6 +750,7 @@
 				0D43259E2264713C00FBAC1B /* UIColor+SCAddition.m in Sources */,
 				0D4325A12264713C00FBAC1B /* UIImageView+SCAddition.m in Sources */,
 				0D4325A72264713C00FBAC1B /* UILabel+extension.swift in Sources */,
+				0D36522E22801DC900C2ECC6 /* SCComposeIdeaController.swift in Sources */,
 				0D4325A32264713C00FBAC1B /* NSString+SCAddition.m in Sources */,
 				0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */,
 				0D4325A62264713C00FBAC1B /* Date+extension.swift in Sources */,

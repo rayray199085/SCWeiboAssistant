@@ -9,6 +9,8 @@
 import UIKit
 
 class SCComposeTypeButton: UIControl {
+    var className: String?
+    
     @IBOutlet weak var buttonImageView: UIImageView!
     @IBOutlet weak var buttonLabel: UILabel!
     class func composeTypeButton(imageName: String, labelText: String)-> SCComposeTypeButton{

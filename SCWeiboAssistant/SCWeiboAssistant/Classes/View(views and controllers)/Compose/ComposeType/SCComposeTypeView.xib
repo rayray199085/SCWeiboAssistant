@@ -25,7 +25,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="LYg-kW-5yS">
                                 <rect key="frame" x="110.5" y="100" width="154" height="48"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rM-g9-Mpa">
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CF-yp-tSU">
+                                <rect key="frame" x="0.0" y="340" width="375" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="aeF-3m-3xL"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rM-g9-Mpa" userLabel="toolBar">
                                 <rect key="frame" x="0.0" y="620" width="375" height="47"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buX-1Z-GVq">
@@ -35,42 +41,50 @@
                                             <action selector="clickCloseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="v8a-Fc-L9P"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEM-OI-T9F" userLabel="Prev Button">
+                                        <rect key="frame" x="175" y="11" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="clickPrevButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Rm9-iv-yrn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="aUy-4t-Qqh"/>
-                                    <constraint firstItem="buX-1Z-GVq" firstAttribute="centerY" secondItem="4rM-g9-Mpa" secondAttribute="centerY" id="r3u-k6-aGo"/>
-                                    <constraint firstItem="buX-1Z-GVq" firstAttribute="centerX" secondItem="4rM-g9-Mpa" secondAttribute="centerX" id="tIV-OZ-ZT5"/>
+                                    <constraint firstItem="DEM-OI-T9F" firstAttribute="centerY" secondItem="4rM-g9-Mpa" secondAttribute="centerY" id="77D-tn-Zqu"/>
+                                    <constraint firstItem="buX-1Z-GVq" firstAttribute="centerY" secondItem="4rM-g9-Mpa" secondAttribute="centerY" id="f4y-4v-l5U"/>
+                                    <constraint firstAttribute="height" constant="47" id="gbH-j2-led"/>
+                                    <constraint firstItem="buX-1Z-GVq" firstAttribute="centerX" secondItem="4rM-g9-Mpa" secondAttribute="centerX" id="maI-bP-QQr"/>
+                                    <constraint firstItem="DEM-OI-T9F" firstAttribute="centerX" secondItem="4rM-g9-Mpa" secondAttribute="centerX" id="zbk-8f-GRx"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CF-yp-tSU">
-                                <rect key="frame" x="0.0" y="340" width="375" height="224"/>
-                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="4rM-g9-Mpa" firstAttribute="leading" secondItem="BwZ-k7-npe" secondAttribute="leading" id="3dl-rl-Jdi"/>
-                            <constraint firstItem="LYg-kW-5yS" firstAttribute="centerX" secondItem="BwZ-k7-npe" secondAttribute="centerX" id="BF2-Zr-r1p"/>
-                            <constraint firstItem="4rM-g9-Mpa" firstAttribute="top" secondItem="0CF-yp-tSU" secondAttribute="bottom" constant="56" id="Kbc-W0-zvM"/>
-                            <constraint firstItem="0CF-yp-tSU" firstAttribute="trailing" secondItem="4rM-g9-Mpa" secondAttribute="trailing" id="b5t-hM-VYv"/>
-                            <constraint firstAttribute="bottom" secondItem="4rM-g9-Mpa" secondAttribute="bottom" id="g01-PK-3bv"/>
-                            <constraint firstItem="0CF-yp-tSU" firstAttribute="leading" secondItem="4rM-g9-Mpa" secondAttribute="leading" id="iQc-jO-qKY"/>
-                            <constraint firstItem="0CF-yp-tSU" firstAttribute="top" secondItem="BwZ-k7-npe" secondAttribute="top" constant="340" id="leb-JZ-QN4"/>
-                            <constraint firstAttribute="trailing" secondItem="4rM-g9-Mpa" secondAttribute="trailing" id="qZ7-Qh-ntU"/>
-                            <constraint firstItem="LYg-kW-5yS" firstAttribute="top" secondItem="BwZ-k7-npe" secondAttribute="top" constant="100" id="rtD-mh-Utv"/>
+                            <constraint firstItem="LYg-kW-5yS" firstAttribute="top" secondItem="BwZ-k7-npe" secondAttribute="top" constant="100" id="5R3-c6-kh3"/>
+                            <constraint firstItem="0CF-yp-tSU" firstAttribute="leading" secondItem="BwZ-k7-npe" secondAttribute="leading" id="8ad-Na-ISR"/>
+                            <constraint firstItem="4rM-g9-Mpa" firstAttribute="top" secondItem="0CF-yp-tSU" secondAttribute="bottom" constant="56" id="NI5-Kf-cAe"/>
+                            <constraint firstAttribute="trailing" secondItem="4rM-g9-Mpa" secondAttribute="trailing" id="TsN-6S-iQz"/>
+                            <constraint firstAttribute="trailing" secondItem="0CF-yp-tSU" secondAttribute="trailing" id="Y90-nb-AUh"/>
+                            <constraint firstAttribute="bottom" secondItem="4rM-g9-Mpa" secondAttribute="bottom" id="aOK-e1-RlE"/>
+                            <constraint firstItem="LYg-kW-5yS" firstAttribute="centerX" secondItem="BwZ-k7-npe" secondAttribute="centerX" id="roQ-lL-bLh"/>
+                            <constraint firstItem="4rM-g9-Mpa" firstAttribute="leading" secondItem="BwZ-k7-npe" secondAttribute="leading" id="vuY-Ka-fZW"/>
                         </constraints>
                     </view>
                     <blurEffect style="light"/>
                 </visualEffectView>
             </subviews>
             <constraints>
-                <constraint firstItem="Piv-cM-gL1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NZS-6m-EEG"/>
-                <constraint firstItem="Piv-cM-gL1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jE7-Jt-ZfM"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Piv-cM-gL1" secondAttribute="bottom" id="nhT-uS-YCt"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Piv-cM-gL1" secondAttribute="trailing" id="qLI-Af-WW3"/>
+                <constraint firstItem="Piv-cM-gL1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="5mz-cV-gPp"/>
+                <constraint firstItem="Piv-cM-gL1" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="V2P-f8-vap"/>
+                <constraint firstItem="Piv-cM-gL1" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ozG-Su-Bo4"/>
+                <constraint firstItem="Piv-cM-gL1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zDg-UK-2k9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="closeButton" destination="buX-1Z-GVq" id="2WS-6c-Brs"/>
+                <outlet property="closeButtonCenterXCons" destination="maI-bP-QQr" id="uus-i7-7DB"/>
+                <outlet property="prevButton" destination="DEM-OI-T9F" id="Rx5-Es-Xie"/>
+                <outlet property="prevButtonCenterXCons" destination="zbk-8f-GRx" id="LDF-5l-ROc"/>
                 <outlet property="scrollView" destination="0CF-yp-tSU" id="QgB-AN-Uhh"/>
             </connections>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
@@ -79,5 +93,6 @@
     <resources>
         <image name="compose_slogan" width="154" height="48"/>
         <image name="tabbar_compose_background_icon_close" width="25" height="25"/>
+        <image name="tabbar_compose_background_icon_return" width="25" height="25"/>
     </resources>
 </document>
