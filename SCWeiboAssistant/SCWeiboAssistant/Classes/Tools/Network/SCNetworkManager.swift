@@ -14,7 +14,6 @@ class SCNetworkManager{
     lazy var userAccount = SCUserAccount()
     
     var userLogon: Bool{
-        print(NSString.getDocumentDirectory())
         return userAccount.access_token != nil
     }
     private init() {

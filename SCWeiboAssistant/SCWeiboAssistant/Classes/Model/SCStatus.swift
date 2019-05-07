@@ -17,6 +17,12 @@ class SCStatus: NSObject {
     @objc var attitudes_count: Int = 0
     @objc var pic_urls: [SCStatusPicture]?
     @objc var retweeted_status: SCStatus?
+    @objc var source: String?{
+        didSet{
+            source = (source?.getURLAndSourceByRegex()?.sourceName != nil && source?.getURLAndSourceByRegex()?.sourceName != "") ?  "from: \((source?.getURLAndSourceByRegex()?.sourceName)!)" : ""
+        }
+    }
+    @objc var created_at: String?
     
     override var description: String{
         return yy_modelDescription()

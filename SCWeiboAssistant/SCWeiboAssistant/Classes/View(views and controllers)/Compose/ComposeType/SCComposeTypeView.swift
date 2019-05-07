@@ -18,6 +18,7 @@ class SCComposeTypeView: UIView {
     
     @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
     @IBOutlet weak var prevButtonCenterXCons: NSLayoutConstraint!
+    private var completionBlock:((_ clsName: String?)->())?
     private let buttonsInfo = [["imageName":"tabbar_compose_idea","title":"Idea","clsName":"SCComposeIdeaController"],["imageName":"tabbar_compose_photo","title":"Photo"],["imageName":"tabbar_compose_weibo","title":"Weibo"],["imageName":"tabbar_compose_lbs","title":"Check-in"],["imageName":"tabbar_compose_review","title":"Comment"],["imageName":"tabbar_compose_more","title":"More", "actionName":"clickMore"],["imageName":"tabbar_compose_friend","title":"Friends"],["imageName":"tabbar_compose_voice","title":"Voice"],["imageName":"tabbar_compose_music","title":"Music"],["imageName":"tabbar_compose_shooting","title":"Camera"]]
     
     class func composeTypeView()->SCComposeTypeView{
@@ -28,8 +29,9 @@ class SCComposeTypeView: UIView {
         return v
     }
     
-    func show() {
+    func show(completion: @escaping (_ clsName: String?)->()) {
         let vc = UIApplication.shared.keyWindow?.rootViewController
+        completionBlock = completion
         vc?.view.addSubview(self)
         showViewWithAnimation()
     }
@@ -63,10 +65,20 @@ class SCComposeTypeView: UIView {
     }
     
     @objc private func clickComposeButton(button: SCComposeTypeButton){
-        guard let clsName = button.className else{
-            return
+        let currentPage = Int(scrollView.contentOffset.x / UIScreen.screenWidth())
+        let currentView = scrollView.subviews[currentPage]
+        for (index,btn) in currentView.subviews.enumerated(){
+            if btn == button{
+                btn.addPopScaleAnimation(toValue: 2, duration: 0.5)
+            }else{
+                btn.addPopScaleAnimation(toValue: 0.5, duration: 0.5)
+            }
+            btn.addPopAlphaAnimation(fromValue: 1.0, toValue: 0.2, duration: 0.5) { (_, _) in
+                if index == currentView.subviews.count - 1{
+                    self.completionBlock?(button.className)
+                }
+            }
         }
-        print(clsName)
     }
 }
 private extension SCComposeTypeView{

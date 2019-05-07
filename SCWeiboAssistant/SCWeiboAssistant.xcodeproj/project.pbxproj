@@ -59,6 +59,7 @@
 		0D7185A3227197F0003C934D /* SCWelcomePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7185A2227197F0003C934D /* SCWelcomePageView.xib */; };
 		0D7D3581226E942900533698 /* WKWebView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D3580226E942900533698 /* WKWebView+extension.swift */; };
 		0D7D358A226EEBD300533698 /* SCUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D3589226EEBD300533698 /* SCUserAccount.swift */; };
+		0D96B76422815618004B161B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B76322815618004B161B /* UITableView+extension.swift */; };
 		0DC3743C2276810F002DD480 /* SCStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC3743B2276810F002DD480 /* SCStatusPicture.swift */; };
 		0DC374422276D781002DD480 /* SCStatusTableViewRepostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DC374412276D781002DD480 /* SCStatusTableViewRepostCell.xib */; };
 		0DDAF2E6227436A800323C0B /* SCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAF2E5227436A800323C0B /* SCUser.swift */; };
@@ -156,6 +157,7 @@
 		0D7185A2227197F0003C934D /* SCWelcomePageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCWelcomePageView.xib; sourceTree = "<group>"; };
 		0D7D3580226E942900533698 /* WKWebView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+extension.swift"; sourceTree = "<group>"; };
 		0D7D3589226EEBD300533698 /* SCUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCUserAccount.swift; sourceTree = "<group>"; };
+		0D96B76322815618004B161B /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		0DC3743B2276810F002DD480 /* SCStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusPicture.swift; sourceTree = "<group>"; };
 		0DC374412276D781002DD480 /* SCStatusTableViewRepostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCStatusTableViewRepostCell.xib; sourceTree = "<group>"; };
 		0DDAF2E5227436A800323C0B /* SCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCUser.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				0D7D3580226E942900533698 /* WKWebView+extension.swift */,
 				0DFB4FB72279655C00A3AF63 /* UITableViewCell+extension.swift */,
 				0D36522B227FFE0700C2ECC6 /* UIView+extension.swift */,
+				0D96B76322815618004B161B /* UITableView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				0D7185A1227183B9003C934D /* SCNewFeatureView.swift in Sources */,
 				0D4325A02264713C00FBAC1B /* UIButton+SCAddition.m in Sources */,
 				0D43257F22646F6A00FBAC1B /* SCMessageViewController.swift in Sources */,
+				0D96B76422815618004B161B /* UITableView+extension.swift in Sources */,
 				0D0004CF226B044F00BB073D /* SCStatus.swift in Sources */,
 				0D7D358A226EEBD300533698 /* SCUserAccount.swift in Sources */,
 				0D7D3581226E942900533698 /* WKWebView+extension.swift in Sources */,

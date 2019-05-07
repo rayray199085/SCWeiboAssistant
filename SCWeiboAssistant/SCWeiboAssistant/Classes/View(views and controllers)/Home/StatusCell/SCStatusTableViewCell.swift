@@ -23,6 +23,7 @@ class SCStatusTableViewCell: UITableViewCell {
                 isAvatar: true)
             toolBarView.statusViewModel = statusViewModel
             pictureView.statusViewModel = statusViewModel
+            sourceLabel.text = statusViewModel?.status.source
         }
     }
     @IBOutlet weak var avatarImageView: UIImageView!

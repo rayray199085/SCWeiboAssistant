@@ -12,7 +12,10 @@ class SCComposeIdeaController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.purple
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", fontSize: 16, target: self, action: #selector(goBack), isBack: true)
+    }
+    @objc private func goBack(){
+        dismiss(animated: true, completion: nil)
     }
 }

@@ -45,7 +45,7 @@ extension String{
     /// get source string by using regular expression
     /// - Returns: a tuple includes url string and source name
     func getURLAndSourceByRegex()->(urlString:String,sourceName:String)?{
-        let pattern = "<a href=\"(.*?)\".*?\">(.*?)</a>"
+        let pattern = "<a href=\"(.*?)\".*?>(.*?)</a>"
         guard  let regx = try? NSRegularExpression(pattern: pattern, options: []),
                let result = regx.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.count)) else{
             return nil
@@ -53,21 +53,6 @@ extension String{
         let urlString = (self as NSString).substring(with: result.range(at: 1))
         let sourceName = (self as NSString).substring(with: result.range(at: 2))
         return (urlString,sourceName)
-    }
-}
-
-// MARK: - mix words and image
-extension String{
-    func demo(label: UILabel, image:UIImage){
-        let attachment = NSTextAttachment()
-        attachment.image = image
-        let height = label.font.lineHeight
-        attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
-        let imgString = NSAttributedString(attachment: attachment)
-        
-        let attributeStringM = NSMutableAttributedString(string: "me")
-        attributeStringM.append(imgString)
-        label.attributedText = attributeStringM
     }
 }
 

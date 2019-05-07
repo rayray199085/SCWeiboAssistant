@@ -52,7 +52,17 @@ class SCMainViewController: UITabBarController {
     @objc private func clickComposeButton(){
         //FIXME: check whether login
         let composeView = SCComposeTypeView.composeTypeView()
-        composeView.show()
+        composeView.show { [weak composeView](clsName) in
+            guard let clsName = clsName,
+                let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? UIViewController.Type else{
+                    composeView?.removeFromSuperview()
+                    return
+            }
+            let nav = UINavigationController(rootViewController: cls.init())
+            self.present(nav, animated: true, completion: {
+                composeView?.removeFromSuperview()
+            })
+        }
     }
 }
 extension SCMainViewController: UITabBarControllerDelegate{
@@ -63,9 +73,11 @@ extension SCMainViewController: UITabBarControllerDelegate{
         let index = children.firstIndex(of: viewController) ?? 0
         if selectedViewController == viewController && index == 0{
             let vc = viewController.children[0] as! SCHomeViewController
-            let offset = vc.navigationController?.navigationBar.frame.maxY ?? 64
-            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -offset), animated: true)
+
             vc.loadData()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+                vc.tableView?.scroll(to: UITableView.scrollsTo.top, animated: true)
+            }
             tabBar.items?[0].badgeValue = nil
             UIApplication.shared.applicationIconBadgeNumber = 0
         }
