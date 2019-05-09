@@ -19,7 +19,7 @@ class SCStatus: NSObject {
     @objc var retweeted_status: SCStatus?
     @objc var source: String?{
         didSet{
-            source = (source?.getURLAndSourceByRegex()?.sourceName != nil && source?.getURLAndSourceByRegex()?.sourceName != "") ?  "from: \((source?.getURLAndSourceByRegex()?.sourceName)!)" : ""
+            source = (source != nil && source != "") ? "from: \((source?.getURLAndSourceByRegex()?.sourceName)!)" : ""
         }
     }
     @objc var created_at: String?

@@ -9,7 +9,9 @@
 import UIKit
 
 class SCComposeIdeaController: UIViewController {
-
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var toolBar: UIToolbar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.purple

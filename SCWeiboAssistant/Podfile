@@ -12,4 +12,5 @@ pod "pop"
 pod "Alamofire"
 pod "AlamofireNetworkActivityIndicator"
 pod "SCRRefreshControl"
+pod "SCREmoticonKeyboard"
 end

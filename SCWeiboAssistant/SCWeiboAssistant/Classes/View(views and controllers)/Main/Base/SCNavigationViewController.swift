@@ -11,7 +11,7 @@ import UIKit
 class SCNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactivePopGestureRecognizer!.delegate = nil
+        allowSwipeToGoBack()
     }
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if children.count > 0{

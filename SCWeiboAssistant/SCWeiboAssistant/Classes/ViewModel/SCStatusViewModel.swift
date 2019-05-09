@@ -8,6 +8,7 @@
 
 import Foundation
 import YYModel
+import SCREmoticonKeyboard
 
 class SCStatusViewModel: CustomStringConvertible{
     var status: SCStatus
@@ -21,13 +22,18 @@ class SCStatusViewModel: CustomStringConvertible{
     var picUrls: [SCStatusPicture]?{
         return status.retweeted_status?.pic_urls ?? status.pic_urls
     }
-    var repostDetails: String{
-        return "@\(status.retweeted_status?.user?.screen_name ?? ""):\(status.retweeted_status?.text ?? "")"
-    }
-    var rowHeight: CGFloat = 0
+    var statusAttrText: NSAttributedString?
+    var repostAttrText: NSAttributedString?
     
+    var rowHeight: CGFloat = 0
     init(model: SCStatus) {
         status = model
+        let detailsFont = UIFont.systemFont(ofSize: 15)
+        let repostDetailsFont = UIFont.systemFont(ofSize: 14)
+        statusAttrText = SCREmoticonManager.shared.getEmoticonString(text: status.text ?? "", font: detailsFont)
+        let repostContent =  "@\(status.retweeted_status?.user?.screen_name ?? ""):\(status.retweeted_status?.text ?? "")"
+        repostAttrText = SCREmoticonManager.shared.getEmoticonString(text: repostContent, font: repostDetailsFont)
+        
         let mbrank = status.user?.mbrank ?? 0
         membershipImage = (mbrank > 0 && mbrank <= 7) ? UIImage(named: "common_icon_membership_level\(mbrank)") : nil
         switch (status.user?.verified_type ?? -1) {
@@ -55,16 +61,14 @@ class SCStatusViewModel: CustomStringConvertible{
         let toolbarHeight: CGFloat = 35
         var height: CGFloat = 0
         let labelSize = CGSize(width: UIScreen.screenWidth() - 2 * margin,height: CGFloat(MAXFLOAT))
-        let detailsString = status.text ?? ""
-        let detailsFont = UIFont.systemFont(ofSize: 15)
-        let repostDetailsFont = UIFont.systemFont(ofSize: 14)
-        
         height += 2 * margin
         height += avatarViewHeight + margin
-        height += detailsString.getTextHeight(size: labelSize, font: detailsFont)
+        
+        height += statusAttrText!.getTextHeight(size: labelSize)
+        
         if status.retweeted_status != nil{
             height += 2 * margin
-            height += repostDetails.getTextHeight(size: labelSize, font: repostDetailsFont)
+            height += repostAttrText!.getTextHeight(size: labelSize)
         }
         height += pictureViewSize.height
         height += margin

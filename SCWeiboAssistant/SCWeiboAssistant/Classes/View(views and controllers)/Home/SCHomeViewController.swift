@@ -58,10 +58,18 @@ extension SCHomeViewController{
         let statusViewModel = statusListViewModel.statusList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: statusViewModel.status.retweeted_status != nil ? repostReuseIdentifier : originalReuseIdentifier, for: indexPath) as! SCStatusTableViewCell
         cell.statusViewModel = statusViewModel
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let statusViewModel = statusListViewModel.statusList[indexPath.row]
         return statusViewModel.rowHeight
+    }
+}
+extension SCHomeViewController: SCStatusTableViewCellDelegate{
+    func cellDidClickUrlString(cell: SCStatusTableViewCell, urlString: String) {
+        let vc = SCStatusWebViewController()
+        vc.urlString = urlString
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
