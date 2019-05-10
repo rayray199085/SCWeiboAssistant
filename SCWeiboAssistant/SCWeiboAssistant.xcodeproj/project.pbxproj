@@ -64,6 +64,7 @@
 		0D7D3581226E942900533698 /* WKWebView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D3580226E942900533698 /* WKWebView+extension.swift */; };
 		0D7D358A226EEBD300533698 /* SCUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D3589226EEBD300533698 /* SCUserAccount.swift */; };
 		0D96B76422815618004B161B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96B76322815618004B161B /* UITableView+extension.swift */; };
+		0D9D58072284FEE8009C3F87 /* SCComposeIdeaTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D58062284FEE8009C3F87 /* SCComposeIdeaTitleView.swift */; };
 		0DC3743C2276810F002DD480 /* SCStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC3743B2276810F002DD480 /* SCStatusPicture.swift */; };
 		0DC374422276D781002DD480 /* SCStatusTableViewRepostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DC374412276D781002DD480 /* SCStatusTableViewRepostCell.xib */; };
 		0DDAF2E6227436A800323C0B /* SCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAF2E5227436A800323C0B /* SCUser.swift */; };
@@ -73,6 +74,7 @@
 		0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256522655DCB006BE6EE /* SCDemoViewController.swift */; };
 		0DDD256B226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */; };
 		0DE8294E226BF4CE00545341 /* SCStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8294D226BF4CE00545341 /* SCStatusListViewModel.swift */; };
+		0DEE54E9228549860045FE6C /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE54E8228549860045FE6C /* UIViewController+extension.swift */; };
 		0DFB4FB82279655C00A3AF63 /* UITableViewCell+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB4FB72279655C00A3AF63 /* UITableViewCell+extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +168,7 @@
 		0D7D3580226E942900533698 /* WKWebView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+extension.swift"; sourceTree = "<group>"; };
 		0D7D3589226EEBD300533698 /* SCUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCUserAccount.swift; sourceTree = "<group>"; };
 		0D96B76322815618004B161B /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
+		0D9D58062284FEE8009C3F87 /* SCComposeIdeaTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCComposeIdeaTitleView.swift; sourceTree = "<group>"; };
 		0DC3743B2276810F002DD480 /* SCStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusPicture.swift; sourceTree = "<group>"; };
 		0DC374412276D781002DD480 /* SCStatusTableViewRepostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCStatusTableViewRepostCell.xib; sourceTree = "<group>"; };
 		0DDAF2E5227436A800323C0B /* SCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCUser.swift; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 		0DDD2569226592DE006BE6EE /* UIScreen+SCAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SCAddition.h"; sourceTree = "<group>"; };
 		0DDD256A226592DE006BE6EE /* UIScreen+UISCreen_extenshion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+UISCreen_extenshion.m"; sourceTree = "<group>"; };
 		0DE8294D226BF4CE00545341 /* SCStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStatusListViewModel.swift; sourceTree = "<group>"; };
+		0DEE54E8228549860045FE6C /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		0DFB4FB72279655C00A3AF63 /* UITableViewCell+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+extension.swift"; sourceTree = "<group>"; };
 		5BE6C868617C149D9B8DDC59 /* Pods_SCWeiboAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCWeiboAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF30161588E3A756C2BC8F1 /* Pods-SCWeiboAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCWeiboAssistant.release.xcconfig"; path = "Target Support Files/Pods-SCWeiboAssistant/Pods-SCWeiboAssistant.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				0D2F3FB8227E9F4600FB45B7 /* ComposeType */,
 				0D36522D22801DC900C2ECC6 /* SCComposeIdeaController.swift */,
 				0D1F69D322840F4E0092CAB0 /* SCComposeIdeaController.xib */,
+				0D9D58062284FEE8009C3F87 /* SCComposeIdeaTitleView.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				0D36522B227FFE0700C2ECC6 /* UIView+extension.swift */,
 				0D96B76322815618004B161B /* UITableView+extension.swift */,
 				0D1F69CF22840D530092CAB0 /* UINavigationController+extension.swift */,
+				0DEE54E8228549860045FE6C /* UIViewController+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -773,6 +779,7 @@
 				0D36522E22801DC900C2ECC6 /* SCComposeIdeaController.swift in Sources */,
 				0D1F69CA2283EB370092CAB0 /* SCStatusWebViewController.swift in Sources */,
 				0D4325A32264713C00FBAC1B /* NSString+SCAddition.m in Sources */,
+				0DEE54E9228549860045FE6C /* UIViewController+extension.swift in Sources */,
 				0DDD256622655DCB006BE6EE /* SCDemoViewController.swift in Sources */,
 				0D4325A62264713C00FBAC1B /* Date+extension.swift in Sources */,
 				0D43258122646F7600FBAC1B /* SCDiscoverViewController.swift in Sources */,
@@ -798,6 +805,7 @@
 				0D4478BE226D8F080036D572 /* WeiboCommon.swift in Sources */,
 				0D43257622646E8200FBAC1B /* SCMainViewController.swift in Sources */,
 				0DDAF2E6227436A800323C0B /* SCUser.swift in Sources */,
+				0D9D58072284FEE8009C3F87 /* SCComposeIdeaTitleView.swift in Sources */,
 				0DFB4FB82279655C00A3AF63 /* UITableViewCell+extension.swift in Sources */,
 				0D43258322646F8300FBAC1B /* SCProfileViewController.swift in Sources */,
 				0D4325AB2264713C00FBAC1B /* UIPageControl+extension.swift in Sources */,

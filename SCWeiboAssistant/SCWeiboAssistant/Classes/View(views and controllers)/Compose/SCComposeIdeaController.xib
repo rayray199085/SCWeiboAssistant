@@ -12,8 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SCComposeIdeaController" customModule="SCWeiboAssistant" customModuleProvider="target">
             <connections>
+                <outlet property="postButton" destination="ILw-H2-koV" id="ybw-eY-Dux"/>
                 <outlet property="textView" destination="OxM-1D-iTb" id="ZhO-lY-4ml"/>
+                <outlet property="titleView" destination="69g-Vz-Czl" id="DNZ-bW-d0Q"/>
                 <outlet property="toolBar" destination="d7Y-pe-DXp" id="X36-D7-aH6"/>
+                <outlet property="toolBarBottomCons" destination="qoR-z0-EUI" id="HC4-bk-Ufh"/>
                 <outlet property="view" destination="OyA-if-q6F" id="kig-Jj-lqd"/>
             </connections>
         </placeholder>
@@ -25,7 +28,6 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OxM-1D-iTb">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -34,9 +36,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="0ED-hN-hnv"/>
                     </constraints>
-                    <items>
-                        <barButtonItem title="Item" id="4u8-Dd-wm2"/>
-                    </items>
+                    <items/>
                 </toolbar>
             </subviews>
             <constraints>
@@ -51,5 +51,55 @@
             <viewLayoutGuide key="safeArea" id="HQK-o6-c9X"/>
             <point key="canvasLocation" x="392.80000000000001" y="-27.436281859070466"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ILw-H2-koV">
+            <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <state key="normal" title="Post" backgroundImage="common_button_big_orange"/>
+            <state key="disabled" backgroundImage="common_button_white_disable">
+                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            </state>
+            <state key="highlighted" backgroundImage="common_button_big_orange_highlighted"/>
+            <connections>
+                <action selector="clickPostButton:" destination="-1" eventType="touchUpInside" id="84q-6y-LXE"/>
+            </connections>
+            <point key="canvasLocation" x="-358" y="23"/>
+        </button>
+        <view contentMode="scaleToFill" id="69g-Vz-Czl" customClass="SCComposeIdeaTitleView" customModule="SCWeiboAssistant" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Weibo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tr-oW-yln">
+                    <rect key="frame" x="4" y="0.0" width="92" height="20.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="screen_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qai-IO-CEC">
+                    <rect key="frame" x="10" y="24" width="80" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="1Tr-oW-yln" firstAttribute="top" secondItem="FNG-DB-ClX" secondAttribute="top" id="Fm2-qI-Grb"/>
+                <constraint firstItem="Qai-IO-CEC" firstAttribute="centerX" secondItem="69g-Vz-Czl" secondAttribute="centerX" id="brQ-x8-SRf"/>
+                <constraint firstAttribute="bottom" secondItem="Qai-IO-CEC" secondAttribute="bottom" id="fxx-oD-K5r"/>
+                <constraint firstItem="Qai-IO-CEC" firstAttribute="top" secondItem="1Tr-oW-yln" secondAttribute="bottom" constant="3.5" id="mv1-VA-oO9"/>
+                <constraint firstItem="1Tr-oW-yln" firstAttribute="centerX" secondItem="69g-Vz-Czl" secondAttribute="centerX" id="zNw-t2-6Rj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="FNG-DB-ClX"/>
+            <connections>
+                <outlet property="screenName" destination="Qai-IO-CEC" id="hxi-KJ-QQ2"/>
+            </connections>
+            <point key="canvasLocation" x="-238.40000000000001" y="376.91154422788611"/>
+        </view>
     </objects>
+    <resources>
+        <image name="common_button_big_orange" width="11" height="9.5"/>
+        <image name="common_button_big_orange_highlighted" width="11" height="9.5"/>
+        <image name="common_button_white_disable" width="11" height="9.5"/>
+    </resources>
 </document>
