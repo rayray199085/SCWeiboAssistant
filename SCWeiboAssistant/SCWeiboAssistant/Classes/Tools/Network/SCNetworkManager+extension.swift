@@ -67,15 +67,25 @@ extension SCNetworkManager{
 }
 
 extension SCNetworkManager{
-    func postWeibo(text: String,completion:@escaping (_ result: [String: Any]?,_ isSuccess: Bool)->()){
+    
+    func postWeibo(text: String,image: UIImage? = nil, completion:@escaping (_ result: [String: Any]?,_ isSuccess: Bool)->()){
         guard let id = userAccount.uid else{
             return
         }
         let urlString = "https://api.weibo.com/2/statuses/share.json"
         let params = ["id":"\(id)","status":"\(text) \(SCSecurityDomain)"]
-        requestWithToken(urlString: urlString, method: HTTPMethod.post, params: params) { (res, isSuccess) in
-            let dict = res as? [String: Any]
-            completion(dict,isSuccess)
+        
+        let name = image != nil ? "pic" : nil
+        let data = image != nil ? image!.pngData() : nil
+
+        requestWithToken(
+            urlString: urlString,
+            method: HTTPMethod.post,
+            params: params,
+            name: name,
+            data: data) { (res, isSuccess) in
+                let dict = res as? [String: Any]
+                completion(dict,isSuccess)
         }
     }
 }

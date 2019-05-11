@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SCComposeIdeaController: UIViewController {
     @IBOutlet var postButton: UIButton!
@@ -24,6 +25,7 @@ class SCComposeIdeaController: UIViewController {
     }
     deinit {
         removeKeyboardWillChangeFrameNotification()
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -43,12 +45,25 @@ class SCComposeIdeaController: UIViewController {
         guard let text = textView.text else{
             return 
         }
-        SCNetworkManager.shared.postWeibo(text: text) { (dict, isSuccess) in
-            print(dict)
+        SCNetworkManager.shared.postWeibo(text: text, image: nil) { (dict, isSuccess) in
+            let message = isSuccess ? "Delivered" : "Fail to post"
+            SVProgressHUD.showInfo(withStatus: message)
+            SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+            if isSuccess{
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now(), execute: {
+                    self.goBack()
+                })
+            }
         }
     }
     @objc private func clickToolBarButton(button: UIButton){
-        print(button.tag)
+        switch button.tag {
+            case 3:
+                // switch keyboard
+                print(button.tag)
+            default:
+                break
+        }
     }
     @objc private func keyboardWillChangeFrame(notification: Notification){
         guard let (height,duration) = getKeyboardHeightAndAnimationDuration(notification: notification) else{
